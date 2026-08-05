@@ -1,15 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>走马岭数字预运营系统</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-</head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.jsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="杨金的个人作品集——AI 产品运营、内容策略与建筑设计实践。" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>杨金｜AI 产品运营与内容创作</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="header">
+        <div class="container header-inner">
+          <a class="brand" href="#top" aria-label="回到首页"><span class="brand-mark">Y</span><strong>杨金</strong></a>
+          <nav class="nav" aria-label="主导航">
+            <a href="#about">关于我</a><a href="#skills">能力</a><a href="#projects">项目</a><a href="#contact">联系我</a><a class="mobile-resume" href="/downloads/杨金-简历.docx" download="杨金-简历.docx">下载简历 ↓</a>
+          </nav>
+          <a class="button resume" href="/downloads/杨金-简历.docx" download="杨金-简历.docx">下载简历 <span>↓</span></a>
+          <button class="menu-button" aria-expanded="false" aria-label="打开菜单"><span></span><span></span><span></span></button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero section reveal">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">你好，我是 <strong>杨金。</strong></p>
+              <h1><strong>AI 产品运营</strong><br><span class="outlined">内容创作者</span><br>建筑 × <strong>AI。</strong></h1>
+              <p class="muted hero-intro">重庆大学建筑学硕士在读，聚焦 AI 产品运营、内容策略与用户增长，持续探索 AI 工具在建筑设计与内容生产中的应用。</p>
+              <div class="socials hero-socials" aria-label="联系方式">
+                <a href="https://www.xiaohongshu.com/user/profile/5f6f27cc0000000001003d99" target="_blank" rel="noopener noreferrer" aria-label="访问杨金的小红书主页" title="小红书主页"><img class="brand-icon" src="/assets/icons/xiaohongshu.png" alt=""></a>
+                <a href="https://github.com/18087627569yj-hue/AI.Simplify" target="_blank" rel="noopener noreferrer" aria-label="访问 AI.Simplify GitHub 仓库" title="GitHub · AI.Simplify"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" stroke="none" d="M16 3.4a12.8 12.8 0 0 0-4 25c.64.12.87-.28.87-.62v-2.23c-3.56.77-4.31-1.51-4.31-1.51-.58-1.48-1.42-1.87-1.42-1.87-1.16-.79.09-.78.09-.78 1.28.09 1.96 1.32 1.96 1.32 1.14 1.95 2.99 1.39 3.72 1.06.12-.83.45-1.39.81-1.71-2.84-.32-5.83-1.42-5.83-6.33 0-1.4.5-2.54 1.32-3.44-.13-.32-.57-1.63.12-3.39 0 0 1.07-.34 3.52 1.31a12.2 12.2 0 0 1 6.4 0c2.44-1.65 3.51-1.31 3.51-1.31.7 1.76.26 3.07.13 3.39.82.9 1.31 2.04 1.31 3.44 0 4.92-2.99 6-5.84 6.32.46.4.87 1.18.87 2.38v3.53c0 .34.23.75.88.62A12.8 12.8 0 0 0 16 3.4Z"></path></svg></a>
+                <button type="button" class="contact-trigger" data-contact-label="邮箱" data-contact-value="1665672159@qq.com" aria-label="显示并复制邮箱" aria-expanded="false" title="查看邮箱"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="3"></rect><path d="m6 10 10 8 10-8"></path></svg></button>
+                <button type="button" class="contact-trigger" data-contact-label="电话" data-contact-value="18087627569" aria-label="显示并复制电话" aria-expanded="false" title="查看电话"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10.2 5.2 6.9 7.5c-1.1.8-1.5 2.2-1 3.5 3 7.5 8.6 13.1 16.1 16.1 1.3.5 2.7.1 3.5-1l2.3-3.3-6-4-2.2 2.4c-3.8-1.8-6.8-4.8-8.6-8.6l2.4-2.2-3.2-5.2Z"></path></svg></button>
+                <div class="contact-popover" role="status" hidden><span class="contact-popover-label"></span><strong class="contact-popover-value"></strong><button type="button" class="copy-contact">复制</button></div>
+              </div>
+            </div>
+            <div class="hero-art"><img src="/assets/profile/杨金-首图-彩色.png" alt="杨金使用电脑的彩色人物插画"></div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="about">
+          <div class="container about-grid">
+            <figure class="profile-card"><img src="/assets/profile/杨金-关于我.png" alt="杨金的黑白人物形象插画"><figcaption><strong>杨金</strong><span>AI 产品运营 · 建筑学硕士</span></figcaption></figure>
+            <div class="about-copy">
+              <h2 class="section-title"><span>关于</span> <strong>我</strong></h2>
+              <p>我叫杨金，目前就读于重庆大学建筑学硕士，拥有昆明理工大学建筑学学士背景。建筑训练让我习惯从复杂问题中梳理结构，也让我持续关注技术、内容与真实用户之间的联系。</p>
+              <p>我从 0 到 1 运营“AI＋建筑”垂直账号，累计创作 100 余篇原创内容，账号粉丝 7000＋，近 30 日曝光超过 300 万，并运营 4 个 500 人垂直社群。</p>
+              <p>同时，我将内容生产流程抽象为可复用的 AI 工作流，并基于 Claude Code 开发文章生成、图文笔记文案和图片提示词反推等自定义 Skill，持续探索更高效的内容生产方式。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="skills">
+          <div class="container">
+            <h2 class="section-title"><span>我的</span> <strong>能力</strong></h2>
+            <div class="skill-grid">
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h21l7 7v25H10z"></path><path d="M30 8v8h8M16 22h16M16 28h16M16 34h10"></path><path d="m34 30 5-5 3 3-5 5-4 1z"></path></svg></span><strong>内容运营</strong></article>
+              <article class="skill-card active"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 39h32M11 35V21h7v14M21 35V13h7v22M31 35V7h7v28"></path><path d="m10 16 9-7 8 4 11-8"></path></svg></span><strong>数据复盘</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38 20 26l7 7L40 18"></path><path d="M31 18h9v9"></path><circle cx="15" cy="16" r="5"></circle><path d="M5 29c1-6 5-9 10-9 3 0 5 1 7 3"></path></svg></span><strong>用户增长</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="7"></circle><circle cx="10" cy="20" r="5"></circle><circle cx="38" cy="20" r="5"></circle><path d="M11 39c1-9 6-14 13-14s12 5 13 14M3 38c.5-6 3-10 8-11M45 38c-.5-6-3-10-8-11"></path></svg></span><strong>社群运营</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32v24H23l-8 6v-6H8z"></path><path d="m19 17-5 5 5 5M29 17l5 5-5 5M26 15l-4 14"></path></svg></span><strong>Prompt 策略</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="20" height="20" rx="3"></rect><path d="M20 20h8v8h-8zM19 5v9M29 5v9M19 34v9M29 34v9M5 19h9M5 29h9M34 19h9M34 29h9"></path></svg></span><strong>AI 工作流</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 6 8 14-8 22-8-22zM16 20h16"></path><circle cx="24" cy="20" r="3"></circle><path d="M9 36h30"></path></svg></span><strong>视觉设计</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="13" width="34" height="27" rx="3"></rect><path d="m7 21 8-8 8 8 8-8 8 8M20 27l10 6-10 6z"></path></svg></span><strong>视频制作</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 17 9-17 9-17-9zM7 14v20l17 9 17-9V14M24 23v20"></path><path d="m14 29 5 3v5l-5-3zM29 27l6-3v9l-6 3z"></path></svg></span><strong>建筑表达</strong></article>
+              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M6 24h36M24 6c6 5 9 11 9 18s-3 13-9 18c-6-5-9-11-9-18s3-13 9-18z"></path><path d="M10 15h28M10 33h28"></path></svg></span><strong>英文能力</strong></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section dark reveal" id="experience">
+          <div class="container">
+            <h2 class="section-title"><span>我的</span> <strong>经历</strong></h2>
+            <div class="experience-list">
+              <article class="experience-card"><span class="experience-mark">01</span><div><h3>小红书 AI 账号运营 <small>项目负责人</small></h3><p>围绕“AI＋建筑”垂直方向，从账号定位、选题策划到内容发布和数据复盘，独立推进账号的完整运营链路。</p><ul><li>累计发布原创笔记 100＋篇，账号粉丝由 0 增长至 7000＋，全网粉丝超过 8000。</li><li>累计获赞与收藏 18.5 万＋，近 30 日内容曝光超过 300 万，持续根据阅读、互动与转化数据调整选题。</li><li>搭建并维护 4 个 500 人垂直社群，通过内容分发、用户反馈与需求观察沉淀目标人群洞察。</li></ul></div><time>2025.11 — 至今</time></article>
+              <article class="experience-card featured"><span class="experience-mark">02</span><div><h3>AI 内容生产工作流与 Prompt 策略设计 <small>项目负责人</small></h3><p>将内容生产过程拆解为可复用的标准流程，探索 Claude Code 与自定义 Skill 在日常运营中的落地方式。</p><ul><li>搭建选题、资料整理、内容生成、视觉制作与发布复盘五阶段工作流，降低重复操作成本。</li><li>自主开发文章生成、图文笔记文案、图片提示词反推 3 个自定义 Skill，覆盖核心内容场景。</li><li>将单条内容平均生产周期由约 2 小时缩短至 30 分钟，整体效率提升约 75%。</li></ul></div><time>2025.11 — 2026.04</time></article>
+              <article class="experience-card"><span class="experience-mark">03</span><div><h3>建筑与城规学院新媒体部门 <small>部门成员</small></h3><p>参与学院新媒体内容运营与校园活动传播，负责从文案、排版到视觉素材制作的多项工作。</p><ul><li>独立完成 20＋篇公众号内容排版与 10＋篇原创文稿，关注信息结构、阅读节奏和视觉一致性。</li><li>参与活动海报与传播物料设计，并承担视频剪辑和内容包装，支持学院重点活动的线上传播。</li><li>在协作中积累内容策划、跨角色沟通和节点推进经验，能够独立完成任务并按期交付。</li></ul></div><time>2025.09 — 2026.06</time></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section dark reveal" id="projects">
+          <div class="container">
+            <h2 class="section-title"><span>我的</span> <strong>项目</strong></h2>
+            <div class="project-list">
+              <article class="project"><a class="project-image project-collage" href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统完整项目"><span class="collage-grid"><img src="/assets/projects/zoumaling/screens/01.jpg" alt=""><img src="/assets/projects/zoumaling/screens/04.jpg" alt=""><img src="/assets/projects/zoumaling/screens/06.jpg" alt=""><img src="/assets/projects/zoumaling/screens/09.jpg" alt=""><img src="/assets/projects/zoumaling/screens/12.jpg" alt=""><img src="/assets/projects/zoumaling/screens/15.jpg" alt=""><img src="/assets/projects/zoumaling/screens/18.jpg" alt=""><img src="/assets/projects/zoumaling/screens/21.jpg" alt=""><img src="/assets/projects/zoumaling/screens/24.jpg" alt=""></span></a><div class="project-copy"><strong class="project-no">01</strong><h3>走马岭数字预运营系统</h3><p>面向乡村旅游预运营场景打造的交互式数字产品，融合村庄叙事、角色测试、游客地图、景点探索与个性化路线规划；同时配置景点管理、路线关系配置和访问数据看板，为游客体验与后续运营决策提供支持。</p><div class="project-tags" aria-label="项目技术与方向"><span>产品设计</span><span>交互体验</span><span>React</span><span>Vite</span><span>Supabase</span></div><a href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统项目详情">↗</a></div></article>
+              <article class="project reverse"><div class="project-image"><img src="/assets/figma/raw-02.jpg" alt="品牌视觉与商业空间项目占位图"></div><div class="project-copy"><strong class="project-no">02</strong><h3>品牌视觉与商业空间</h3><p>从概念、视觉系统到落地呈现，建立一致且具有识别度的体验。项目资料到位后可扩展为独立详情页。</p><a href="#contact">↗</a></div></article>
+              <article class="project"><div class="project-image"><img src="/assets/figma/raw-06.jpg" alt="内容设计与作品叙事项目占位图"></div><div class="project-copy"><strong class="project-no">03</strong><h3>内容设计与作品叙事</h3><p>通过版式、图像和动态节奏，让复杂过程变成容易理解、愿意阅读的作品故事。</p><a href="#contact">↗</a></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="testimonials">
+          <div class="container">
+            <h2 class="section-title"><span>合作</span> <strong>评价</strong></h2>
+            <div class="testimonial-grid">
+              <article class="testimonial"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“善于把模糊的问题梳理成清晰、可执行的设计方向。”</p><span></span><strong>合作伙伴 A</strong><small>项目协作者</small></article>
+              <article class="testimonial active"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“对视觉细节敏感，同时能够兼顾整体逻辑与落地效果。”</p><span></span><strong>合作伙伴 B</strong><small>设计伙伴</small></article>
+              <article class="testimonial"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“沟通直接、推进稳定，每个阶段都能给出可靠的结果。”</p><span></span><strong>合作伙伴 C</strong><small>项目协作者</small></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="contact">
+          <div class="container contact-grid">
+            <form class="contact-form">
+              <input required aria-label="姓名" placeholder="你的姓名"><input required type="email" aria-label="邮箱" placeholder="邮箱"><input aria-label="个人网站" placeholder="个人网站（如果有）"><textarea required aria-label="留言" placeholder="想和我聊些什么？" rows="5"></textarea>
+              <div class="form-actions"><button class="button" type="submit">发送消息</button><div class="socials"><a class="active" href="#contact" title="微信 Ben18087627569">微</a><a href="mailto:1665672159@qq.com">邮</a><a href="tel:18087627569">电</a></div></div>
+              <p class="form-notice" role="status" hidden>框架演示：表单状态正常，接入邮箱或服务后即可发送。</p>
+            </form>
+            <div class="contact-copy"><h2>让我们一起<br><span class="outlined">聊聊</span> 新想法</h2><p class="muted">如果你关注 AI 产品运营、内容增长或 AI 与建筑的结合，欢迎与我联系。</p><a href="mailto:1665672159@qq.com">1665672159@qq.com</a><a href="tel:18087627569">180 8762 7569</a><p class="wechat">微信：Ben18087627569</p></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer"><div class="container"><a class="brand inverted" href="#top"><span class="brand-mark">Y</span><strong>杨金</strong></a><p>© 2026 · 持续更新中</p></div></footer>
+    </div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
 </html>
