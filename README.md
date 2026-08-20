@@ -1,3 +1,60 @@
+# Still-Life Naive Doodle
+
+将一张静物照片转化为“黑色拙趣线描 + 大面积留白 + 单一亮色点缀”的极简手绘插画，全程不生成小人、人物或拟人角色。
+
+## 关于这个 Skill
+
+`still-life-naive-doodle` 是一个 Codex Skill，适用于杯子、书本、花瓶、水果、餐具、饮品、食品、产品和桌面陈设等静物照片。
+
+- 保留照片中最有辨识度的 1—3 件物品及其摆放关系
+- 删除复杂背景、真实光影和次要细节
+- 使用松散、不均匀、允许断裂的黑色手绘线条
+- 让约 80% 的画面保持空白，只使用一种小面积亮色
+- 通过物品的倾斜、堆叠、重复和尺度变化制造安静的冷幽默
+- 禁止人物、小人、脸、眼睛、手脚、动物角色和物品拟人化
+
+它不是写实描摹、滤镜或精致矢量化，而是从原照片中提炼物体关系，再重组为克制、松弛的日常视觉诗。
+
+## 使用方法
+
+### 方式一：作为 Codex Skill 使用
+
+推荐直接让 Codex 安装本仓库中的 Skill：
+
+> 使用 `$skill-installer` 从 `https://github.com/18087627569yj-hue/AI.Simplify.git` 安装 `skills/still-life-naive-doodle`。
+
+也可以手动将 [`skills/still-life-naive-doodle`](skills/still-life-naive-doodle) 文件夹复制到 `~/.codex/skills/`。
+
+安装后开启一个新任务，上传一张静物照片并输入：
+
+> 使用 `$still-life-naive-doodle` 将我上传的静物照片转换为极简拙趣手绘插画，不要出现人物或拟人角色。
+
+Skill 会分析照片中的核心物品、位置关系和适合的点缀色，然后调用可用的图片生成能力完成转换。
+
+### 方式二：直接使用提示词
+
+不安装 Skill 时，可以打开 [`references/prompt-template.md`](skills/still-life-naive-doodle/references/prompt-template.md)，将其中的主体物品和点缀色替换为照片内容，再作为图生图提示词使用。
+
+## 核心原则
+
+1. 上传照片始终是唯一内容来源，不凭空替换成另一组静物。
+2. 简化但仍可辨认，保留核心物品及其基本空间关系。
+3. 叙事只通过静物的排列产生，不使用人物、动物或拟人五官。
+4. 默认不生成文字、品牌 Logo、水印、手机界面和黑色外框。
+
+## Skill 结构
+
+```text
+skills/still-life-naive-doodle/
+├── SKILL.md                       Skill 工作流程与约束
+├── agents/openai.yaml             Codex 界面名称与默认入口
+└── references/prompt-template.md  主提示词与反向提示词模板
+```
+
+运行需要 Codex 的图片生成能力；如果当前环境无法生成图片，Skill 会返回已经根据照片填写好的主提示词和反向提示词。
+
+---
+
 # 走马岭数字预运营系统
 
 这是一个基于 Vite + React 的前端项目，用于走马岭景区数字预运营展示、游客路线规划和管理后台演示。
