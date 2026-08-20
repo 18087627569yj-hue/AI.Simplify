@@ -1,0 +1,4 @@
+interface:
+  display_name: "静物拙趣手绘"
+  short_description: "把静物照片转成无人物、留白感强的极简拙趣线描插画"
+  default_prompt: "使用 $still-life-naive-doodle 将我上传的静物照片转换为极简拙趣手绘插画。"
