@@ -3,8 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <meta name="description" content="杨金的个人作品集——AI 产品运营、内容策略与建筑设计实践。" />
-    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="/src/styles.css?v=portfolio-20260809-8" />
     <title>杨金｜AI 产品运营与内容创作</title>
   </head>
   <body>
@@ -13,9 +16,9 @@
         <div class="container header-inner">
           <a class="brand" href="#top" aria-label="回到首页"><span class="brand-mark">Y</span><strong>杨金</strong></a>
           <nav class="nav" aria-label="主导航">
-            <a href="#about">关于我</a><a href="#skills">能力</a><a href="#projects">项目</a><a href="#contact">联系我</a><a class="mobile-resume" href="/downloads/杨金-简历.docx" download="杨金-简历.docx">下载简历 ↓</a>
+            <a href="#about">关于我</a><a href="#skills">能力</a><a href="#projects">项目</a><a href="#contact">联系我</a><button class="mobile-resume resume-trigger" type="button" aria-haspopup="dialog" aria-controls="resume-modal">查看简历 ↗</button>
           </nav>
-          <a class="button resume" href="/downloads/杨金-简历.docx" download="杨金-简历.docx">下载简历 <span>↓</span></a>
+          <button class="button resume resume-trigger" type="button" aria-haspopup="dialog" aria-controls="resume-modal">查看简历 <span>↗</span></button>
           <button class="menu-button" aria-expanded="false" aria-label="打开菜单"><span></span><span></span><span></span></button>
         </div>
       </header>
@@ -24,8 +27,8 @@
         <section class="hero section reveal">
           <div class="container hero-grid">
             <div class="hero-copy">
-              <p class="eyebrow">你好，我是 <strong>杨金。</strong></p>
-              <h1><strong>AI 产品运营</strong><br><span class="outlined">内容创作者</span><br>建筑 × <strong>AI。</strong></h1>
+              <p class="eyebrow"><strong>AI.Simplify</strong></p>
+              <h1><strong class="hero-tagline">AI 让设计变得更加简单</strong><br><span class="outlined">内容创作者</span><br>设计 × <strong>AI。</strong></h1>
               <p class="muted hero-intro">重庆大学建筑学硕士在读，聚焦 AI 产品运营、内容策略与用户增长，持续探索 AI 工具在建筑设计与内容生产中的应用。</p>
               <div class="socials hero-socials" aria-label="联系方式">
                 <a href="https://www.xiaohongshu.com/user/profile/5f6f27cc0000000001003d99" target="_blank" rel="noopener noreferrer" aria-label="访问杨金的小红书主页" title="小红书主页"><img class="brand-icon" src="/assets/icons/xiaohongshu.png" alt=""></a>
@@ -55,16 +58,11 @@
           <div class="container">
             <h2 class="section-title"><span>我的</span> <strong>能力</strong></h2>
             <div class="skill-grid">
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h21l7 7v25H10z"></path><path d="M30 8v8h8M16 22h16M16 28h16M16 34h10"></path><path d="m34 30 5-5 3 3-5 5-4 1z"></path></svg></span><strong>内容运营</strong></article>
-              <article class="skill-card active"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 39h32M11 35V21h7v14M21 35V13h7v22M31 35V7h7v28"></path><path d="m10 16 9-7 8 4 11-8"></path></svg></span><strong>数据复盘</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38 20 26l7 7L40 18"></path><path d="M31 18h9v9"></path><circle cx="15" cy="16" r="5"></circle><path d="M5 29c1-6 5-9 10-9 3 0 5 1 7 3"></path></svg></span><strong>用户增长</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="7"></circle><circle cx="10" cy="20" r="5"></circle><circle cx="38" cy="20" r="5"></circle><path d="M11 39c1-9 6-14 13-14s12 5 13 14M3 38c.5-6 3-10 8-11M45 38c-.5-6-3-10-8-11"></path></svg></span><strong>社群运营</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32v24H23l-8 6v-6H8z"></path><path d="m19 17-5 5 5 5M29 17l5 5-5 5M26 15l-4 14"></path></svg></span><strong>Prompt 策略</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="20" height="20" rx="3"></rect><path d="M20 20h8v8h-8zM19 5v9M29 5v9M19 34v9M29 34v9M5 19h9M5 29h9M34 19h9M34 29h9"></path></svg></span><strong>AI 工作流</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 6 8 14-8 22-8-22zM16 20h16"></path><circle cx="24" cy="20" r="3"></circle><path d="M9 36h30"></path></svg></span><strong>视觉设计</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="13" width="34" height="27" rx="3"></rect><path d="m7 21 8-8 8 8 8-8 8 8M20 27l10 6-10 6z"></path></svg></span><strong>视频制作</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 17 9-17 9-17-9zM7 14v20l17 9 17-9V14M24 23v20"></path><path d="m14 29 5 3v5l-5-3zM29 27l6-3v9l-6 3z"></path></svg></span><strong>建筑表达</strong></article>
-              <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M6 24h36M24 6c6 5 9 11 9 18s-3 13-9 18c-6-5-9-11-9-18s3-13 9-18z"></path><path d="M10 15h28M10 33h28"></path></svg></span><strong>英文能力</strong></article>
+              <button class="skill-card skill-card-link community-trigger" type="button" data-gallery="content" data-community-index="0" aria-label="查看 AI 内容运营案例"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h21l7 7v25H10z"></path><path d="M30 8v8h8M16 22h16M16 28h16M16 34h10"></path><path d="m34 30 5-5 3 3-5 5-4 1z"></path></svg></span><strong>AI 内容运营</strong><span class="skill-card-action">查看案例 ↗</span></button>
+              <button class="skill-card skill-card-link community-trigger" type="button" data-gallery="community" data-community-index="0" aria-label="查看社群运营案例"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="7"></circle><circle cx="10" cy="20" r="5"></circle><circle cx="38" cy="20" r="5"></circle><path d="M11 39c1-9 6-14 13-14s12 5 13 14M3 38c.5-6 3-10 8-11M45 38c-.5-6-3-10-8-11"></path></svg></span><strong>社群运营</strong><span class="skill-card-action">查看案例 ↗</span></button>
+              <button class="skill-card skill-card-link community-trigger" type="button" data-gallery="workflow" data-community-index="0" aria-label="查看 AI 工作流案例"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="14" width="20" height="20" rx="3"></rect><path d="M20 20h8v8h-8zM19 5v9M29 5v9M19 34v9M29 34v9M5 19h9M5 29h9M34 19h9M34 29h9"></path></svg></span><strong>AI 工作流</strong><span class="skill-card-action">查看流程 ↗</span></button>
+              <button class="skill-card skill-card-link community-trigger" type="button" data-gallery="prompt" data-community-index="0" aria-label="查看 Prompt 策略案例"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32v24H23l-8 6v-6H8z"></path><path d="m19 17-5 5 5 5M29 17l5 5-5 5M26 15l-4 14"></path></svg></span><strong>Prompt 策略</strong><span class="skill-card-action">查看案例 ↗</span></button>
+              <button class="skill-card skill-card-link community-trigger" type="button" data-gallery="design" data-community-index="0" aria-label="查看设计表达作品集"><span class="skill-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 17 9-17 9-17-9zM7 14v20l17 9 17-9V14M24 23v20"></path><path d="m14 29 5 3v5l-5-3zM29 27l6-3v9l-6 3z"></path></svg></span><strong>设计表达</strong><span class="skill-card-action">查看作品 ↗</span></button>
             </div>
           </div>
         </section>
@@ -116,6 +114,47 @@
 
       <footer class="footer"><div class="container"><a class="brand inverted" href="#top"><span class="brand-mark">Y</span><strong>杨金</strong></a><p>© 2026 · 持续更新中</p></div></footer>
     </div>
-    <script type="module" src="/src/app.js"></script>
+    <div class="community-modal" id="community-modal" role="dialog" aria-modal="true" aria-labelledby="community-modal-title" hidden>
+      <div class="community-backdrop" data-community-close></div>
+      <section class="community-dialog">
+        <header class="community-dialog-header">
+          <div><span class="gallery-modal-eyebrow">COMMUNITY OPERATIONS</span><strong id="community-modal-title">AI 学习社群运营</strong></div>
+          <div class="community-dialog-actions"><span class="community-counter" aria-live="polite">01 / 05</span><button class="community-close" type="button" data-community-close aria-label="关闭社群图集">×</button></div>
+        </header>
+        <div class="community-viewer">
+          <button class="community-nav community-prev" type="button" aria-label="查看上一张">←</button>
+          <figure class="community-feature">
+            <div class="community-feature-phone">
+              <div class="ios-status-bar" aria-hidden="true">
+                <strong>9:41</strong>
+                <span class="ios-dynamic-island"></span>
+                <svg class="ios-status-icons" viewBox="0 0 62 14">
+                  <g fill="currentColor"><rect x="0" y="9" width="2.5" height="4" rx="1"></rect><rect x="4.5" y="7" width="2.5" height="6" rx="1"></rect><rect x="9" y="4.5" width="2.5" height="8.5" rx="1"></rect><rect x="13.5" y="2" width="2.5" height="11" rx="1"></rect></g>
+                  <path d="M22 6.2c3.4-3.1 8.5-3.1 12 0M24.8 9c1.8-1.7 4.6-1.7 6.4 0M27.2 11.5c.5-.5 1.1-.5 1.6 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path>
+                  <rect x="40" y="2" width="17" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"></rect><rect x="42" y="4" width="12" height="6" rx="1.2" fill="currentColor"></rect><path d="M59 5v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+              </div>
+              <div class="community-screen-crop"><img src="/assets/projects/community/group-01.jpg" alt="AI.Simplify 学习分享群 1，500 名成员"><article class="workflow-slide" hidden></article></div>
+            </div>
+            <figcaption><strong>AI.Simplify 学习分享群 1</strong><span>500 名成员</span></figcaption>
+          </figure>
+          <button class="community-nav community-next" type="button" aria-label="查看下一张">→</button>
+        </div>
+        <div class="community-thumbnails" aria-label="选择要查看的案例截图"></div>
+      </section>
+    </div>
+    <div class="resume-modal" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title" hidden>
+      <div class="resume-backdrop" data-resume-close></div>
+      <section class="resume-dialog">
+        <header class="resume-dialog-header">
+          <div><span>个人简历</span><strong id="resume-modal-title">杨金 · AI 产品运营</strong></div>
+          <button class="resume-close" type="button" data-resume-close aria-label="关闭简历">×</button>
+        </header>
+        <div class="resume-viewer">
+          <img class="resume-page" src="/assets/resume/杨金-AI产品运营简历.png" alt="杨金的 AI 产品运营简历" draggable="false">
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/app.js?v=portfolio-20260829-1"></script>
   </body>
 </html>

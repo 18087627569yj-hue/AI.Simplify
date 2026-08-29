@@ -1,4 +1,4 @@
-const screens = Array.from({ length: 24 }, (_, index) => `/assets/projects/zoumaling/screens/${String(index + 1).padStart(2, '0')}.jpg`)
+const screens = Array.from({ length: 24 }, (_, index) => `../../assets/projects/zoumaling/screens/${String(index + 1).padStart(2, '0')}.jpg`)
 const dialog = document.querySelector('.lightbox')
 const dialogImage = dialog?.querySelector('img')
 const count = dialog?.querySelector('.lightbox-count')
@@ -13,7 +13,7 @@ const showScreen = index => {
   if (count) count.textContent = `${String(current + 1).padStart(2, '0')} / ${screens.length}`
 }
 
-document.querySelectorAll('.screen-gallery button').forEach(button => {
+document.querySelectorAll('[data-index]').forEach(button => {
   button.addEventListener('click', () => {
     showScreen(Number(button.dataset.index))
     dialog?.showModal()
