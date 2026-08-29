@@ -1,0 +1,11 @@
+{
+  "name": "personal-portfolio-boy-static",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 4173 --bind 0.0.0.0 --directory dist/client",
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 4173 --bind 0.0.0.0 --directory dist/client"
+  }
+}

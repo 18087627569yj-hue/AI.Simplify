@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+本人照片/
+网站素材/
+ScreenShot_*.png
+*.tar.gz
+
