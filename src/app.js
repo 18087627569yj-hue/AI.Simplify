@@ -11,12 +11,52 @@ nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => 
   menuButton?.setAttribute('aria-expanded', 'false')
 }))
 
+const navLinks = [...(nav?.querySelectorAll('a[href^="#"]') ?? [])]
+const navTargets = navLinks.map(link => {
+  const hash = link.getAttribute('href')
+  const element = hash === '#top' ? document.querySelector('.hero') : document.querySelector(hash)
+  return { link, element }
+}).filter(item => item.element)
+
+const navObserver = new IntersectionObserver(entries => {
+  const visibleEntry = entries
+    .filter(entry => entry.isIntersecting)
+    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+  if (!visibleEntry) return
+  navTargets.forEach(({ link, element }) => link.classList.toggle('is-active', element === visibleEntry.target))
+}, { rootMargin: '-28% 0px -58%', threshold: [0, 0.15, 0.5] })
+
+navTargets.forEach(({ element }) => navObserver.observe(element))
+
 const observer = new IntersectionObserver(
   entries => entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('is-visible')),
   { threshold: 0.12 },
 )
 
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element))
+
+const projectFolders = [...document.querySelectorAll('.project-folder')]
+let projectFolderFrame = 0
+
+const updateProjectFolders = () => {
+  projectFolderFrame = 0
+  if (!projectFolders.length) return
+  const stickyTop = window.innerWidth <= 700 ? window.innerHeight * 0.45 : 86
+  let activeIndex = 0
+  projectFolders.forEach((folder, index) => {
+    if (folder.getBoundingClientRect().top <= stickyTop) activeIndex = index
+  })
+  projectFolders.forEach((folder, index) => folder.classList.toggle('is-current', index === activeIndex))
+}
+
+const requestProjectFolderUpdate = () => {
+  if (projectFolderFrame) return
+  projectFolderFrame = window.requestAnimationFrame(updateProjectFolders)
+}
+
+updateProjectFolders()
+window.addEventListener('scroll', requestProjectFolderUpdate, { passive: true })
+window.addEventListener('resize', requestProjectFolderUpdate)
 
 const heroSocials = document.querySelector('.hero-socials')
 const contactPopover = heroSocials?.querySelector('.contact-popover')
@@ -343,9 +383,244 @@ document.addEventListener('keydown', event => {
   if (event.key === 'ArrowRight') showCommunitySlide(communityIndex + 1)
 })
 
-const form = document.querySelector('.contact-form')
-form?.addEventListener('submit', event => {
+const messageForm = document.querySelector('.message-form')
+const messageBook = document.querySelector('.message-book')
+const messageBookCover = messageForm?.querySelector('.message-book-cover')
+const messageBookTitle = messageBookCover?.querySelector('strong')
+const messageComposeBody = messageForm?.querySelector('.message-compose-body')
+const messageStatus = messageForm?.querySelector('.message-status')
+const messageSuccess = messageForm?.querySelector('.message-success')
+const messageContent = messageForm?.querySelector('#message-content')
+const messageName = messageForm?.querySelector('#message-name')
+
+const setMessageBookOpen = (isOpen, focusEditor = false) => {
+  messageBook?.classList.toggle('is-open', isOpen)
+  messageBookCover?.setAttribute('aria-expanded', String(isOpen))
+  if (messageBookTitle && (!messageSuccess || messageSuccess.hidden)) messageBookTitle.textContent = isOpen ? '正在写留言' : '点击写留言'
+  if (focusEditor && isOpen) window.setTimeout(() => messageContent?.focus(), 360)
+}
+
+messageBookCover?.addEventListener('click', () => setMessageBookOpen(!messageBook?.classList.contains('is-open'), true))
+messageForm?.querySelector('.message-collapse')?.addEventListener('click', () => setMessageBookOpen(false))
+
+messageBook?.querySelectorAll('[data-paper]').forEach((button, index) => {
+  button.setAttribute('aria-pressed', String(index === 0))
+  button.addEventListener('click', () => {
+    const paper = button.dataset.paper ?? 'lined'
+    messageForm.dataset.paper = paper
+    messageBook.querySelectorAll('[data-paper]').forEach(option => option.setAttribute('aria-pressed', String(option === button)))
+    setMessageBookOpen(true, true)
+    button.blur()
+  })
+})
+
+document.addEventListener('click', event => {
+  if (messageBook?.classList.contains('is-open') && !messageBook.contains(event.target)) setMessageBookOpen(false)
+})
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && messageBook?.classList.contains('is-open')) setMessageBookOpen(false)
+})
+
+const markMessageField = (field, message) => {
+  if (!field) return false
+  const isValid = field.checkValidity() && field.value.trim().length >= Number(field.minLength || 0)
+  field.classList.toggle('is-invalid', !isValid)
+  if (!isValid && messageStatus) messageStatus.textContent = message
+  return isValid
+}
+
+messageForm?.querySelectorAll('input, textarea').forEach(field => {
+  field.addEventListener('input', () => {
+    field.classList.remove('is-invalid')
+    if (messageStatus) messageStatus.textContent = ''
+  })
+})
+
+messageForm?.addEventListener('submit', event => {
   event.preventDefault()
-  const notice = form.querySelector('.form-notice')
-  if (notice) notice.hidden = false
+  const isMessageValid = markMessageField(messageContent, '先写下至少 4 个字，让我知道你想聊什么。')
+  const isNameValid = markMessageField(messageName, '请留下你的称呼。')
+  if (!isMessageValid || !isNameValid) {
+    const firstInvalidField = !isMessageValid ? messageContent : messageName
+    firstInvalidField?.focus()
+    return
+  }
+
+  const subject = `网站留言｜${messageName.value.trim()}`
+  const body = [
+    `你好，我是 ${messageName.value.trim()}。`,
+    '',
+    messageContent.value.trim(),
+  ].join('\n')
+  window.location.href = `mailto:1665672159@qq.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  if (messageComposeBody) messageComposeBody.hidden = true
+  if (messageSuccess) messageSuccess.hidden = false
+  if (messageBookTitle) messageBookTitle.textContent = '留言已写好'
+  if (messageStatus) messageStatus.textContent = ''
+})
+
+messageForm?.querySelector('.message-reset')?.addEventListener('click', () => {
+  messageForm.reset()
+  messageForm.querySelectorAll('.is-invalid').forEach(field => field.classList.remove('is-invalid'))
+  if (messageComposeBody) messageComposeBody.hidden = false
+  if (messageSuccess) messageSuccess.hidden = true
+  if (messageBookTitle) messageBookTitle.textContent = '正在写留言'
+  if (messageStatus) messageStatus.textContent = ''
+  setMessageBookOpen(true)
+  messageContent?.focus()
+})
+
+const messageCardStack = document.querySelector('.message-card-stack')
+const messageCards = [...(messageCardStack?.querySelectorAll('.message-card') ?? [])]
+let messageCardResizeFrame = 0
+let highestMessageCardLayer = 10
+
+const randomBetween = (minimum, maximum) => Math.random() * (maximum - minimum) + minimum
+const clampNumber = (value, minimum, maximum) => Math.min(Math.max(value, minimum), maximum)
+
+const layoutMessageCards = () => {
+  messageCardResizeFrame = 0
+  if (!messageCardStack || !messageCards.length) return
+  const stageWidth = messageCardStack.clientWidth
+  const columns = stageWidth >= 760 ? 3 : stageWidth >= 500 ? 2 : 1
+  const rows = Math.ceil(messageCards.length / columns)
+  const horizontalPadding = 14
+  const verticalPadding = 14
+  const tallestCard = Math.max(...messageCards.map(card => card.offsetHeight))
+  const cardWidth = messageCards[0].offsetWidth
+  const rowGap = 28
+  const naturalStageHeight = (rows * tallestCard) + ((rows - 1) * rowGap) + (verticalPadding * 2)
+  const minimumStageHeight = columns === 3 ? 570 : columns === 2 ? 680 : 1040
+  const stageHeight = Math.max(naturalStageHeight, minimumStageHeight)
+  const horizontalSpace = Math.max(0, stageWidth - cardWidth - (horizontalPadding * 2))
+  const verticalSpace = Math.max(0, stageHeight - tallestCard - (verticalPadding * 2))
+  const slots = messageCards.map((_, index) => ({
+    column: index % columns,
+    row: Math.floor(index / columns),
+  }))
+
+  for (let index = slots.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1))
+    ;[slots[index], slots[randomIndex]] = [slots[randomIndex], slots[index]]
+  }
+
+  messageCardStack.style.height = `${stageHeight}px`
+  messageCards.forEach((card, index) => {
+    const slot = slots[index]
+    const baseLeft = horizontalPadding + (columns === 1 ? horizontalSpace / 2 : (horizontalSpace * slot.column) / (columns - 1))
+    const baseTop = verticalPadding + (rows === 1 ? 0 : (verticalSpace * slot.row) / (rows - 1))
+    card.style.left = `${clampNumber(baseLeft + randomBetween(-7, 7), 6, stageWidth - cardWidth - 6)}px`
+    card.style.top = `${clampNumber(baseTop + randomBetween(-7, 7), 6, stageHeight - card.offsetHeight - 6)}px`
+    card.style.setProperty('--card-rotate', `${randomBetween(-2.2, 2.2).toFixed(2)}deg`)
+    card.style.zIndex = String(index + 1)
+  })
+}
+
+messageCards.forEach(card => {
+  let dragStartX = 0
+  let dragStartY = 0
+  let cardStartLeft = 0
+  let cardStartTop = 0
+
+  card.addEventListener('pointerdown', event => {
+    if (event.button !== 0 || !messageCardStack) return
+    event.preventDefault()
+    dragStartX = event.clientX
+    dragStartY = event.clientY
+    cardStartLeft = Number.parseFloat(card.style.left) || 0
+    cardStartTop = Number.parseFloat(card.style.top) || 0
+    card.classList.add('is-dragging')
+    card.setAttribute('aria-grabbed', 'true')
+    highestMessageCardLayer += 1
+    card.style.zIndex = String(highestMessageCardLayer)
+    card.setPointerCapture(event.pointerId)
+  })
+
+  card.addEventListener('pointermove', event => {
+    if (!card.classList.contains('is-dragging') || !messageCardStack) return
+    const maximumLeft = Math.max(0, messageCardStack.clientWidth - card.offsetWidth)
+    const maximumTop = Math.max(0, messageCardStack.clientHeight - card.offsetHeight)
+    card.style.left = `${clampNumber(cardStartLeft + event.clientX - dragStartX, 0, maximumLeft)}px`
+    card.style.top = `${clampNumber(cardStartTop + event.clientY - dragStartY, 0, maximumTop)}px`
+  })
+
+  const endCardDrag = event => {
+    if (!card.classList.contains('is-dragging')) return
+    card.classList.remove('is-dragging')
+    card.setAttribute('aria-grabbed', 'false')
+    if (card.hasPointerCapture(event.pointerId)) card.releasePointerCapture(event.pointerId)
+  }
+
+  card.addEventListener('pointerup', endCardDrag)
+  card.addEventListener('pointercancel', endCardDrag)
+  card.addEventListener('keydown', event => {
+    if (!messageCardStack || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return
+    event.preventDefault()
+    const movement = event.shiftKey ? 24 : 10
+    const horizontalDirection = event.key === 'ArrowLeft' ? -1 : event.key === 'ArrowRight' ? 1 : 0
+    const verticalDirection = event.key === 'ArrowUp' ? -1 : event.key === 'ArrowDown' ? 1 : 0
+    const maximumLeft = Math.max(0, messageCardStack.clientWidth - card.offsetWidth)
+    const maximumTop = Math.max(0, messageCardStack.clientHeight - card.offsetHeight)
+    card.style.left = `${clampNumber((Number.parseFloat(card.style.left) || 0) + horizontalDirection * movement, 0, maximumLeft)}px`
+    card.style.top = `${clampNumber((Number.parseFloat(card.style.top) || 0) + verticalDirection * movement, 0, maximumTop)}px`
+  })
+})
+
+window.requestAnimationFrame(layoutMessageCards)
+window.addEventListener('resize', () => {
+  if (messageCardResizeFrame) window.cancelAnimationFrame(messageCardResizeFrame)
+  messageCardResizeFrame = window.requestAnimationFrame(layoutMessageCards)
+})
+
+const messageSocials = document.querySelector('.message-socials')
+const messageContactPopover = messageSocials?.querySelector('.message-contact-popover')
+const messageContactLabel = messageContactPopover?.querySelector('.contact-popover-label')
+const messageContactValue = messageContactPopover?.querySelector('.contact-popover-value')
+const copyMessageContact = messageContactPopover?.querySelector('.copy-contact')
+let selectedMessageContact = ''
+
+const closeMessageContactPopover = () => {
+  if (messageContactPopover) messageContactPopover.hidden = true
+  messageSocials?.querySelectorAll('.contact-trigger').forEach(button => button.setAttribute('aria-expanded', 'false'))
+}
+
+messageSocials?.querySelectorAll('.contact-trigger').forEach(button => {
+  button.addEventListener('click', event => {
+    event.stopPropagation()
+    const value = button.dataset.contactValue ?? ''
+    const isCurrentAndOpen = selectedMessageContact === value && messageContactPopover && !messageContactPopover.hidden
+    closeMessageContactPopover()
+    if (isCurrentAndOpen || !messageContactPopover) return
+    selectedMessageContact = value
+    if (messageContactLabel) messageContactLabel.textContent = button.dataset.contactLabel ?? '联系方式'
+    if (messageContactValue) messageContactValue.textContent = value
+    if (copyMessageContact) copyMessageContact.textContent = '复制'
+    messageContactPopover.hidden = false
+    button.setAttribute('aria-expanded', 'true')
+  })
+})
+
+copyMessageContact?.addEventListener('click', async event => {
+  event.stopPropagation()
+  try {
+    await navigator.clipboard.writeText(selectedMessageContact)
+    copyMessageContact.textContent = '已复制'
+  } catch {
+    const input = document.createElement('textarea')
+    input.value = selectedMessageContact
+    document.body.append(input)
+    input.select()
+    document.execCommand('copy')
+    input.remove()
+    copyMessageContact.textContent = '已复制'
+  }
+})
+
+document.addEventListener('click', event => {
+  if (!messageSocials?.contains(event.target)) closeMessageContactPopover()
+})
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeMessageContactPopover()
 })

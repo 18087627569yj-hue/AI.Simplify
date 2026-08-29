@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <meta name="description" content="杨金的个人作品集——AI 产品运营、内容策略与建筑设计实践。" />
-    <link rel="stylesheet" href="/src/styles.css?v=portfolio-20260809-8" />
+    <link rel="stylesheet" href="/src/styles.css?v=portfolio-20260829-17" />
     <title>杨金｜AI 产品运营与内容创作</title>
   </head>
   <body>
@@ -16,7 +16,7 @@
         <div class="container header-inner">
           <a class="brand" href="#top" aria-label="回到首页"><span class="brand-mark">Y</span><strong>杨金</strong></a>
           <nav class="nav" aria-label="主导航">
-            <a href="#about">关于我</a><a href="#skills">能力</a><a href="#projects">项目</a><a href="#contact">联系我</a><button class="mobile-resume resume-trigger" type="button" aria-haspopup="dialog" aria-controls="resume-modal">查看简历 ↗</button>
+            <a class="is-active" href="#top" data-nav-icon="★">首页</a><a href="#about" data-nav-icon="●">关于我</a><a href="#skills" data-nav-icon="▦">能力</a><a href="#projects" data-nav-icon="◆">项目</a><a href="#contact" data-nav-icon="♥">联系我</a><button class="mobile-resume resume-trigger" type="button" aria-haspopup="dialog" aria-controls="resume-modal">查看简历 ↗</button>
           </nav>
           <button class="button resume resume-trigger" type="button" aria-haspopup="dialog" aria-controls="resume-modal">查看简历 <span>↗</span></button>
           <button class="menu-button" aria-expanded="false" aria-label="打开菜单"><span></span><span></span><span></span></button>
@@ -26,9 +26,11 @@
       <main id="top">
         <section class="hero section reveal">
           <div class="container hero-grid">
+            <div class="hero-stickers" aria-hidden="true"><span class="hero-sticker sticker-made">MADE WITH AI</span><span class="hero-sticker sticker-detail">DESIGN × CONTENT</span></div>
             <div class="hero-copy">
               <p class="eyebrow"><strong>AI.Simplify</strong></p>
               <h1><strong class="hero-tagline">AI 让设计变得更加简单</strong><br><span class="outlined">内容创作者</span><br>设计 × <strong>AI。</strong></h1>
+              <p class="hero-status"><span aria-hidden="true"></span>持续创作，也持续寻找值得解决的问题</p>
               <p class="muted hero-intro">重庆大学建筑学硕士在读，聚焦 AI 产品运营、内容策略与用户增长，持续探索 AI 工具在建筑设计与内容生产中的应用。</p>
               <div class="socials hero-socials" aria-label="联系方式">
                 <a href="https://www.xiaohongshu.com/user/profile/5f6f27cc0000000001003d99" target="_blank" rel="noopener noreferrer" aria-label="访问杨金的小红书主页" title="小红书主页"><img class="brand-icon" src="/assets/icons/xiaohongshu.png" alt=""></a>
@@ -38,7 +40,7 @@
                 <div class="contact-popover" role="status" hidden><span class="contact-popover-label"></span><strong class="contact-popover-value"></strong><button type="button" class="copy-contact">复制</button></div>
               </div>
             </div>
-            <div class="hero-art"><img src="/assets/profile/杨金-首图-彩色.png" alt="杨金使用电脑的彩色人物插画"></div>
+            <div class="hero-art"><span class="hero-art-tape" aria-hidden="true">BUILD · TEST · SHARE</span><img src="/assets/profile/杨金-首页主视觉.png" alt="杨金站在创作平台前的手绘人物插画"></div>
           </div>
         </section>
 
@@ -82,32 +84,95 @@
           <div class="container">
             <h2 class="section-title"><span>我的</span> <strong>项目</strong></h2>
             <div class="project-list">
-              <article class="project"><a class="project-image project-collage" href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统完整项目"><span class="collage-grid"><img src="/assets/projects/zoumaling/screens/01.jpg" alt=""><img src="/assets/projects/zoumaling/screens/04.jpg" alt=""><img src="/assets/projects/zoumaling/screens/06.jpg" alt=""><img src="/assets/projects/zoumaling/screens/09.jpg" alt=""><img src="/assets/projects/zoumaling/screens/12.jpg" alt=""><img src="/assets/projects/zoumaling/screens/15.jpg" alt=""><img src="/assets/projects/zoumaling/screens/18.jpg" alt=""><img src="/assets/projects/zoumaling/screens/21.jpg" alt=""><img src="/assets/projects/zoumaling/screens/24.jpg" alt=""></span></a><div class="project-copy"><strong class="project-no">01</strong><h3>走马岭数字预运营系统</h3><p>面向乡村旅游预运营场景打造的交互式数字产品，融合村庄叙事、角色测试、游客地图、景点探索与个性化路线规划；同时配置景点管理、路线关系配置和访问数据看板，为游客体验与后续运营决策提供支持。</p><div class="project-tags" aria-label="项目技术与方向"><span>产品设计</span><span>交互体验</span><span>React</span><span>Vite</span><span>Supabase</span></div><a href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统项目详情">↗</a></div></article>
-              <article class="project reverse"><div class="project-image"><img src="/assets/figma/raw-02.jpg" alt="品牌视觉与商业空间项目占位图"></div><div class="project-copy"><strong class="project-no">02</strong><h3>品牌视觉与商业空间</h3><p>从概念、视觉系统到落地呈现，建立一致且具有识别度的体验。项目资料到位后可扩展为独立详情页。</p><a href="#contact">↗</a></div></article>
-              <article class="project"><div class="project-image"><img src="/assets/figma/raw-06.jpg" alt="内容设计与作品叙事项目占位图"></div><div class="project-copy"><strong class="project-no">03</strong><h3>内容设计与作品叙事</h3><p>通过版式、图像和动态节奏，让复杂过程变成容易理解、愿意阅读的作品故事。</p><a href="#contact">↗</a></div></article>
+              <article class="project project-folder">
+                <div class="folder-tab"><span>✦ PROJECT 01</span></div>
+                <div class="folder-body">
+                  <div class="project-copy"><p class="project-meta">2026 · DIGITAL PRODUCT</p><strong class="project-no">01</strong><h3>走马岭数字预运营系统</h3><p>面向乡村旅游预运营场景打造的交互式数字产品，融合村庄叙事、角色测试、游客地图、景点探索与个性化路线规划；同时配置景点管理、路线关系配置和访问数据看板，为游客体验与后续运营决策提供支持。</p><div class="project-tags" aria-label="项目技术与方向"><span>产品设计</span><span>交互体验</span><span>React</span><span>Vite</span><span>Supabase</span></div><a class="project-view" href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统项目详情">查看项目 ↗</a></div>
+                  <a class="project-image project-collage" href="/projects/zoumaling/" aria-label="查看走马岭数字预运营系统完整项目"><span class="collage-grid"><img src="/assets/projects/zoumaling/screens/01.jpg" alt=""><img src="/assets/projects/zoumaling/screens/04.jpg" alt=""><img src="/assets/projects/zoumaling/screens/06.jpg" alt=""><img src="/assets/projects/zoumaling/screens/09.jpg" alt=""><img src="/assets/projects/zoumaling/screens/12.jpg" alt=""><img src="/assets/projects/zoumaling/screens/15.jpg" alt=""><img src="/assets/projects/zoumaling/screens/18.jpg" alt=""><img src="/assets/projects/zoumaling/screens/21.jpg" alt=""><img src="/assets/projects/zoumaling/screens/24.jpg" alt=""></span></a>
+                </div>
+              </article>
+              <article class="project project-folder">
+                <div class="folder-tab"><span>✦ PROJECT 02</span></div>
+                <div class="folder-body">
+                  <div class="project-copy"><p class="project-meta">2026 · BRAND &amp; SPACE</p><strong class="project-no">02</strong><h3>品牌视觉与商业空间</h3><p>从概念、视觉系统到落地呈现，建立一致且具有识别度的体验。项目资料到位后可扩展为独立详情页。</p><div class="project-tags" aria-label="项目方向"><span>品牌视觉</span><span>空间体验</span><span>系统设计</span></div><a class="project-view" href="#contact">了解项目 ↗</a></div>
+                  <div class="project-image"><img src="/assets/figma/raw-02.jpg" alt="品牌视觉与商业空间项目占位图"></div>
+                </div>
+              </article>
+              <article class="project project-folder">
+                <div class="folder-tab"><span>✦ PROJECT 03</span></div>
+                <div class="folder-body">
+                  <div class="project-copy"><p class="project-meta">2026 · CONTENT DESIGN</p><strong class="project-no">03</strong><h3>内容设计与作品叙事</h3><p>通过版式、图像和动态节奏，让复杂过程变成容易理解、愿意阅读的作品故事。</p><div class="project-tags" aria-label="项目方向"><span>内容策略</span><span>视觉叙事</span><span>动态设计</span></div><a class="project-view" href="#contact">了解项目 ↗</a></div>
+                  <div class="project-image"><img src="/assets/figma/raw-06.jpg" alt="内容设计与作品叙事项目占位图"></div>
+                </div>
+              </article>
             </div>
           </div>
         </section>
 
-        <section class="section reveal" id="testimonials">
-          <div class="container">
-            <h2 class="section-title"><span>合作</span> <strong>评价</strong></h2>
-            <div class="testimonial-grid">
-              <article class="testimonial"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“善于把模糊的问题梳理成清晰、可执行的设计方向。”</p><span></span><strong>合作伙伴 A</strong><small>项目协作者</small></article>
-              <article class="testimonial active"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“对视觉细节敏感，同时能够兼顾整体逻辑与落地效果。”</p><span></span><strong>合作伙伴 B</strong><small>设计伙伴</small></article>
-              <article class="testimonial"><img src="/assets/figma/raw-03.jpg" alt="评价者头像占位图"><p>“沟通直接、推进稳定，每个阶段都能给出可靠的结果。”</p><span></span><strong>合作伙伴 C</strong><small>项目协作者</small></article>
-            </div>
-          </div>
-        </section>
+        <section class="section reveal message-section" id="contact">
+          <div class="container message-container">
+            <p class="message-kicker" aria-hidden="true">Say hi</p>
+            <h2 class="section-title"><span>给我</span> <strong>留言</strong></h2>
 
-        <section class="section reveal" id="contact">
-          <div class="container contact-grid">
-            <form class="contact-form">
-              <input required aria-label="姓名" placeholder="你的姓名"><input required type="email" aria-label="邮箱" placeholder="邮箱"><input aria-label="个人网站" placeholder="个人网站（如果有）"><textarea required aria-label="留言" placeholder="想和我聊些什么？" rows="5"></textarea>
-              <div class="form-actions"><button class="button" type="submit">发送消息</button><div class="socials"><a class="active" href="#contact" title="微信 Ben18087627569">微</a><a href="mailto:1665672159@qq.com">邮</a><a href="tel:18087627569">电</a></div></div>
-              <p class="form-notice" role="status" hidden>框架演示：表单状态正常，接入邮箱或服务后即可发送。</p>
-            </form>
-            <div class="contact-copy"><h2>让我们一起<br><span class="outlined">聊聊</span> 新想法</h2><p class="muted">如果你关注 AI 产品运营、内容增长或 AI 与建筑的结合，欢迎与我联系。</p><a href="mailto:1665672159@qq.com">1665672159@qq.com</a><a href="tel:18087627569">180 8762 7569</a><p class="wechat">微信：Ben18087627569</p></div>
+            <div class="message-board">
+              <div class="message-book">
+                <div class="message-paper-picker" aria-label="选择留言纸底纹">
+                  <button type="button" data-paper="lined" aria-label="选择横线纸"><span>横线纸</span></button>
+                  <button type="button" data-paper="grid" aria-label="选择方格纸"><span>方格纸</span></button>
+                  <button type="button" data-paper="dots" aria-label="选择圆点纸"><span>圆点纸</span></button>
+                  <button type="button" data-paper="plain" aria-label="选择素色纸"><span>素色纸</span></button>
+                </div>
+
+                <form class="message-form" data-paper="lined" novalidate>
+                  <button class="message-book-cover" type="button" aria-expanded="false">
+                    <span><small>LEAVE A NOTE</small><strong>点击写留言</strong></span><i aria-hidden="true">＋</i>
+                  </button>
+                  <button class="message-collapse" type="button" aria-label="收起留言区" title="收起留言区">×</button>
+
+                  <div class="message-compose-body">
+                    <p class="message-prompt">有项目、难题，或只是想打个招呼？写下来吧，每一条我都会认真看。</p>
+                    <label class="message-content-label" for="message-content">你的留言<textarea id="message-content" name="message" required minlength="4" rows="6" placeholder="告诉我你的故事，或者一个项目想法……"></textarea></label>
+                    <div class="message-fields">
+                      <label for="message-name">怎么称呼你？<input id="message-name" name="name" required autocomplete="name" placeholder="你的名字"></label>
+                    </div>
+                    <div class="message-buttons"><button class="message-send" type="submit">点击发送</button></div>
+                  </div>
+
+                  <div class="message-success" hidden>
+                    <span aria-hidden="true">✓</span>
+                    <strong>邮件草稿已准备好</strong>
+                    <p>在邮件应用里确认发送，就能把留言交给我。</p>
+                    <button class="message-reset" type="button">再写一条</button>
+                  </div>
+                  <p class="message-status" role="status" aria-live="polite"></p>
+                </form>
+              </div>
+
+              <section class="message-card-area" aria-labelledby="message-card-title">
+                <header class="message-card-heading">
+                  <div><span>MESSAGE WALL</span><h3 id="message-card-title">留言墙</h3></div>
+                </header>
+                <div class="message-card-stack">
+                  <article class="message-card" tabindex="0" aria-label="林小满的留言，可拖动"><header><span class="message-avatar">林</span><div><strong>林小满</strong><small>刚刚</small></div></header><p>作品集的叙事很清楚，尤其喜欢 AI 与建筑结合的部分。</p><span class="message-card-mark">IDEA</span></article>
+                  <article class="message-card" tabindex="0" aria-label="周野的留言，可拖动"><header><span class="message-avatar">周</span><div><strong>周野</strong><small>今天</small></div></header><p>想邀请你一起做一个 AI 内容工作流项目，有机会聊聊吗？</p><span class="message-card-mark">HELLO</span></article>
+                  <article class="message-card" tabindex="0" aria-label="沈知夏的留言，可拖动"><header><span class="message-avatar">沈</span><div><strong>沈知夏</strong><small>今天</small></div></header><p>从小红书过来的，Prompt 案例给了我很多启发。</p><span class="message-card-mark">PROMPT</span></article>
+                  <article class="message-card" tabindex="0" aria-label="陈时雨的留言，可拖动"><header><span class="message-avatar">陈</span><div><strong>陈时雨</strong><small>本周</small></div></header><p>页面的手账感很特别，期待看到更多项目更新。</p><span class="message-card-mark">DESIGN</span></article>
+                  <article class="message-card" tabindex="0" aria-label="许言的留言，可拖动"><header><span class="message-avatar">许</span><div><strong>许言</strong><small>本周</small></div></header><p>同样在探索 AI 产品运营，希望交换一些实践经验。</p><span class="message-card-mark">AI × OPS</span></article>
+                  <article class="message-card" tabindex="0" aria-label="江舟的留言，可拖动"><header><span class="message-avatar">江</span><div><strong>江舟</strong><small>本周</small></div></header><p>走马岭项目很完整，交互思路给了我不少灵感。</p><span class="message-card-mark">PROJECT</span></article>
+                </div>
+              </section>
+            </div>
+
+            <div class="message-footer">
+              <p class="message-open">如何找到我</p>
+              <div class="socials message-socials" aria-label="更多联系方式">
+                <a href="https://www.xiaohongshu.com/user/profile/5f6f27cc0000000001003d99" target="_blank" rel="noopener noreferrer" aria-label="访问杨金的小红书主页" title="小红书主页"><img class="brand-icon" src="/assets/icons/xiaohongshu.png" alt=""></a>
+                <a href="https://github.com/18087627569yj-hue/AI.Simplify" target="_blank" rel="noopener noreferrer" aria-label="访问 AI.Simplify GitHub 仓库" title="GitHub · AI.Simplify"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" stroke="none" d="M16 3.4a12.8 12.8 0 0 0-4 25c.64.12.87-.28.87-.62v-2.23c-3.56.77-4.31-1.51-4.31-1.51-.58-1.48-1.42-1.87-1.42-1.87-1.16-.79.09-.78.09-.78 1.28.09 1.96 1.32 1.96 1.32 1.14 1.95 2.99 1.39 3.72 1.06.12-.83.45-1.39.81-1.71-2.84-.32-5.83-1.42-5.83-6.33 0-1.4.5-2.54 1.32-3.44-.13-.32-.57-1.63.12-3.39 0 0 1.07-.34 3.52 1.31a12.2 12.2 0 0 1 6.4 0c2.44-1.65 3.51-1.31 3.51-1.31.7 1.76.26 3.07.13 3.39.82.9 1.31 2.04 1.31 3.44 0 4.92-2.99 6-5.84 6.32.46.4.87 1.18.87 2.38v3.53c0 .34.23.75.88.62A12.8 12.8 0 0 0 16 3.4Z"></path></svg></a>
+                <button type="button" class="contact-trigger" data-contact-label="邮箱" data-contact-value="1665672159@qq.com" aria-label="显示并复制邮箱" aria-expanded="false" title="查看邮箱"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="3"></rect><path d="m6 10 10 8 10-8"></path></svg></button>
+                <button type="button" class="contact-trigger" data-contact-label="电话" data-contact-value="18087627569" aria-label="显示并复制电话" aria-expanded="false" title="查看电话"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M10.2 5.2 6.9 7.5c-1.1.8-1.5 2.2-1 3.5 3 7.5 8.6 13.1 16.1 16.1 1.3.5 2.7.1 3.5-1l2.3-3.3-6-4-2.2 2.4c-3.8-1.8-6.8-4.8-8.6-8.6l2.4-2.2-3.2-5.2Z"></path></svg></button>
+                <div class="contact-popover message-contact-popover" role="status" hidden><span class="contact-popover-label"></span><strong class="contact-popover-value"></strong><button type="button" class="copy-contact">复制</button></div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -155,6 +220,6 @@
         </div>
       </section>
     </div>
-    <script type="module" src="/src/app.js?v=portfolio-20260829-1"></script>
+    <script type="module" src="/src/app.js?v=portfolio-20260829-3"></script>
   </body>
 </html>
