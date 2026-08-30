@@ -1,4 +1,9 @@
+node_modules
+dist
 .DS_Store
-__pycache__/
-*.pyc
-work/
+*.local
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+.dev.vars
+.wrangler

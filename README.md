@@ -1,50 +1,39 @@
-# AI.Simplify
+# 简历手记 MVP
 
-面向 Codex 的 AI 图片风格化 Skill 合集。每个 Skill 都将一种可复用的视觉转换方法封装为清晰的工作流程、风格约束和提示词模板。
+面向应届生和 1–3 年经验求职者的可解释 AI 简历优化产品。代码由 GitHub 管理，前端与安全的 AI 接口部署在 Cloudflare Pages。
 
-## Skills
+## 能力
 
-| Skill | 功能 | 入口 |
-| --- | --- | --- |
-| Still-Life Naive Doodle | 将静物照片转换为无人物、大留白、单一亮色点缀的极简拙趣线描插画 | [`skills/still-life-naive-doodle`](skills/still-life-naive-doodle) |
+- 读取 PDF、DOCX、PNG、JPG 简历
+- 支持粘贴 JD、公开招聘链接和 JD 截图
+- 通过 OpenAI Responses API 生成结构化诊断和针对性改写
+- 使用真实性护栏，禁止把未经确认的推断写入最终简历
+- 导出 DOCX、PDF 和修改报告
 
-## 安装
+## 本地运行完整版本
 
-推荐直接让 Codex 安装指定 Skill：
+1. 安装依赖：`npm install`
+2. 复制 `.dev.vars.example` 为 `.dev.vars`
+3. 在 `.dev.vars` 中填写 `OPENAI_API_KEY`
+4. 运行：`npm run dev:full`
+5. 访问 Wrangler 显示的本地地址（默认 `http://localhost:8788`）
 
-> 使用 `$skill-installer` 从 `https://github.com/18087627569yj-hue/AI.Simplify.git` 安装 `skills/still-life-naive-doodle`。
+单独运行 `npm run dev` 只能预览前端，无法调用 `/api/analyze`。
 
-也可以手动将目标 Skill 文件夹复制到 `~/.codex/skills/`，然后开启一个新的 Codex 任务。
+## Cloudflare Pages 部署
 
-## 使用示例
+先在 Cloudflare 创建名为 `resume-notes-mvp` 的 Pages 项目，并配置：
 
-上传一张静物照片并输入：
+- 加密变量 `OPENAI_API_KEY`
+- 可选变量 `OPENAI_MODEL`，默认 `gpt-5-mini`
 
-> 使用 `$still-life-naive-doodle` 将这张照片转换为极简拙趣手绘插画，不要出现人物、小人或拟人角色。
+GitHub 仓库需要配置 Actions Secrets：
 
-Skill 会分析照片中的核心物品、空间关系和适合的点缀色，再调用可用的图片生成能力完成转换。如果当前环境无法生成图片，则返回已经根据照片填写好的主提示词和反向提示词。
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
 
-## 仓库结构
+推送到 `main` 分支后，工作流会构建并部署静态页面与 `functions/api/analyze.ts`。
 
-```text
-AI.Simplify/
-├── README.md
-├── LICENSE
-└── skills/
-    └── still-life-naive-doodle/
-        ├── SKILL.md
-        ├── agents/
-        │   └── openai.yaml
-        └── references/
-            └── prompt-template.md
-```
+## 隐私
 
-## Skill 设计原则
-
-- 一个文件夹对应一个独立、可安装的 Skill。
-- `SKILL.md` 只保留触发条件、核心流程和不可妥协的约束。
-- 详细提示词、风格规范和条件性说明放在 `references/` 中。
-- `agents/openai.yaml` 提供清晰的显示名称、简短说明和默认调用入口。
-- 示例素材只能帮助理解预期效果，不应成为新任务的默认内容来源。
-
-后续新增的图片风格化能力将继续放入 `skills/`，并在本页登记入口。
+本站不建立账号或长期保存用户文件。服务端向 OpenAI 发起诊断请求时设置 `store: false`。部署前仍应根据实际业务补充隐私政策、访问控制、限流和费用保护。
