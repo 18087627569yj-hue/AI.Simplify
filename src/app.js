@@ -386,6 +386,7 @@ document.addEventListener('keydown', event => {
 const messageForm = document.querySelector('.message-form')
 const messageBook = document.querySelector('.message-book')
 const messageBookCover = messageForm?.querySelector('.message-book-cover')
+const messageCollapseButton = messageForm?.querySelector('.message-collapse')
 const messageBookTitle = messageBookCover?.querySelector('strong')
 const messageComposeBody = messageForm?.querySelector('.message-compose-body')
 const messageStatus = messageForm?.querySelector('.message-status')
@@ -394,6 +395,7 @@ const messageContent = messageForm?.querySelector('#message-content')
 const messageName = messageForm?.querySelector('#message-name')
 
 const setMessageBookOpen = (isOpen, focusEditor = false) => {
+  if (isOpen) messageBook?.classList.remove('is-forced-closed')
   messageBook?.classList.toggle('is-open', isOpen)
   messageBookCover?.setAttribute('aria-expanded', String(isOpen))
   if (messageBookTitle && (!messageSuccess || messageSuccess.hidden)) messageBookTitle.textContent = isOpen ? '正在写留言' : '点击写留言'
@@ -401,7 +403,15 @@ const setMessageBookOpen = (isOpen, focusEditor = false) => {
 }
 
 messageBookCover?.addEventListener('click', () => setMessageBookOpen(!messageBook?.classList.contains('is-open'), true))
-messageForm?.querySelector('.message-collapse')?.addEventListener('click', () => setMessageBookOpen(false))
+messageCollapseButton?.addEventListener('click', event => {
+  event.preventDefault()
+  event.stopPropagation()
+  setMessageBookOpen(false)
+  messageBook?.classList.add('is-forced-closed')
+  messageCollapseButton.blur()
+})
+
+messageBook?.addEventListener('pointerleave', () => messageBook.classList.remove('is-forced-closed'))
 
 messageBook?.querySelectorAll('[data-paper]').forEach((button, index) => {
   button.setAttribute('aria-pressed', String(index === 0))
@@ -419,7 +429,10 @@ document.addEventListener('click', event => {
 })
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && messageBook?.classList.contains('is-open')) setMessageBookOpen(false)
+  if (event.key === 'Escape' && messageBook?.classList.contains('is-open')) {
+    setMessageBookOpen(false)
+    messageBook.classList.add('is-forced-closed')
+  }
 })
 
 const markMessageField = (field, message) => {

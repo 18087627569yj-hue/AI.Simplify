@@ -1880,3 +1880,44 @@ body::before {
   .message-book.is-open .message-compose-body { padding: 4px 70px 25px 20px; }
   .message-collapse { top: 17px; right: 17px; width: 40px; height: 40px; }
 }
+
+/* Wider paper fan and forced collapse after using the close control */
+.message-book { padding-top: 222px; }
+.message-paper-picker button { top: 214px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(1) { top: 0; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(2) { top: 72px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(3) { top: 144px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(4) { top: 216px; }
+.message-book:not(.is-open):not(:hover) .message-paper-picker button:nth-child(n),
+.message-book.is-forced-closed:not(.is-open) .message-paper-picker button:nth-child(n) {
+  top: 214px;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 620px) {
+  .message-book { padding-top: 178px; }
+  .message-paper-picker button { top: 170px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(1) { top: 0; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(2) { top: 58px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(3) { top: 116px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(4) { top: 174px; }
+  .message-book:not(.is-open):not(:hover) .message-paper-picker button:nth-child(n),
+  .message-book.is-forced-closed:not(.is-open) .message-paper-picker button:nth-child(n) { top: 170px; }
+}
+
+/* Reverse the paper order: blue at top, yellow closest to the cover */
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(1) { top: 216px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(2) { top: 144px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(3) { top: 72px; }
+.message-book:not(.is-open):hover .message-paper-picker button:nth-child(4) { top: 0; }
+.message-book.is-open .message-paper-picker button:nth-child(1) { order: 4; }
+.message-book.is-open .message-paper-picker button:nth-child(2) { order: 3; }
+.message-book.is-open .message-paper-picker button:nth-child(3) { order: 2; }
+.message-book.is-open .message-paper-picker button:nth-child(4) { order: 1; }
+
+@media (max-width: 620px) {
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(1) { top: 174px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(2) { top: 116px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(3) { top: 58px; }
+  .message-book:not(.is-open):hover .message-paper-picker button:nth-child(4) { top: 0; }
+}
