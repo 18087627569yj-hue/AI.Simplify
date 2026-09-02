@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="84" y1="52" x2="440" y2="468" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF8A60"/>
+      <stop offset="1" stop-color="#D94518"/>
+    </linearGradient>
+    <filter id="shadow" x="80" y="80" width="390" height="390" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#8F290D" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="126" fill="url(#bg)"/>
+  <path d="M89 117c42-41 93-61 152-61" fill="none" stroke="#FFB79D" stroke-width="18" stroke-linecap="round" opacity=".55"/>
+  <g filter="url(#shadow)">
+    <circle cx="239" cy="236" r="112" fill="#FFF9F3"/>
+    <circle cx="239" cy="236" r="76" fill="#2D2924"/>
+    <circle cx="213" cy="207" r="25" fill="#6B625A" opacity=".72"/>
+    <path d="m317 317 91 91" fill="none" stroke="#FFF9F3" stroke-width="44" stroke-linecap="round"/>
+  </g>
+  <path d="m373 74 13 36 36 13-36 13-13 36-13-36-36-13 36-13 13-36Z" fill="#FFF4A8"/>
+  <path d="m121 326 8 22 22 8-22 8-8 22-8-22-22-8 22-8 8-22Z" fill="#FFF4A8"/>
+</svg>

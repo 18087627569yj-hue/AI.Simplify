@@ -1,0 +1,23 @@
+{
+  "name": "ai-simplify-prompt-lens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt -b chrome",
+    "build": "wxt build -b chrome",
+    "zip": "wxt zip -b chrome",
+    "compile": "wxt prepare && tsc --noEmit",
+    "check": "npm run compile && npm run build",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@wxt-dev/module-react": "^1.2.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "typescript": "^7.0.2",
+    "wxt": "^0.21.4"
+  }
+}

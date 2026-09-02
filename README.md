@@ -1,12 +1,20 @@
 # AI.Simplify
 
-面向 Codex 的 AI 图片风格化 Skill 合集。每个 Skill 都将一种可复用的视觉转换方法封装为清晰的工作流程、风格约束和提示词模板。
+面向 AI 视觉创作的可复用 Skill 与工具集合。仓库同时收录 Codex 图片风格化 Skill，以及把图片工作流产品化的浏览器扩展。
 
 ## Skills
 
 | Skill | 功能 | 入口 |
 | --- | --- | --- |
 | Still-Life Naive Doodle | 将静物照片转换为无人物、大留白、单一亮色点缀的极简拙趣线描插画 | [`skills/still-life-naive-doodle`](skills/still-life-naive-doodle) |
+
+## Chrome 扩展
+
+| 扩展 | 功能 | 入口 |
+| --- | --- | --- |
+| Prompt Lens｜反推提示词 | 在网页图片上点击右键，通过 Chrome Side Panel 生成可复制、可编辑的中文生图提示词 | [`extensions/prompt-lens`](extensions/prompt-lens) |
+
+Prompt Lens 当前为可本地安装的交互原型，使用本地 Mock 结果，不连接模型 API，也不会上传图片。安装与开发说明见扩展目录内的 README。
 
 ## 安装
 
@@ -30,13 +38,19 @@ Skill 会分析照片中的核心物品、空间关系和适合的点缀色，�
 AI.Simplify/
 ├── README.md
 ├── LICENSE
-└── skills/
-    └── still-life-naive-doodle/
-        ├── SKILL.md
-        ├── agents/
-        │   └── openai.yaml
-        └── references/
-            └── prompt-template.md
+├── skills/
+│   └── still-life-naive-doodle/
+│       ├── SKILL.md
+│       ├── agents/
+│       │   └── openai.yaml
+│       └── references/
+│           └── prompt-template.md
+└── extensions/
+    └── prompt-lens/
+        ├── README.md
+        ├── entrypoints/
+        ├── src/
+        └── public/icon/
 ```
 
 ## Skill 设计原则
