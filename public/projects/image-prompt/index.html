@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Image Prompt：把图片提示词反推 Skill 产品化为 Chrome 浏览器插件的 AI 产品案例。">
+    <link rel="stylesheet" href="./style.css">
+    <title>Image Prompt｜杨金作品集</title>
+  </head>
+  <body>
+    <div class="case-progress" aria-hidden="true"><span></span></div>
+    <header class="case-nav">
+      <a class="case-nav-brand" href="../../../index.html"><b>Y</b> 杨金 · YANG JIN</a>
+      <div class="case-nav-meta"><span>重庆 · 中国</span><span>产品 / 内容 / AI</span></div>
+      <a class="case-nav-back" href="../../../index.html#projects">返回作品集 ↗</a>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="case-hero-watermark" aria-hidden="true">PROMPT</div>
+        <div class="case-hero-inner">
+          <p class="case-eyebrow">AI BROWSER EXTENSION · 2026</p>
+          <div class="hero-stage" aria-label="在网页图片旁直接生成提示词的浏览器插件界面">
+            <div class="browser-frame">
+              <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-address">inspiration.design / architecture</span><span class="browser-more">•••</span></div>
+              <div class="browser-page">
+                <img src="../../assets/projects/prompt/prompt-18.jpg" alt="现代玻璃建筑参考图">
+                <div class="context-menu" aria-hidden="true"><small>IMAGE ACTION</small><strong>反推提示词</strong><span>⌘ ↵</span></div>
+                <section class="inline-card" aria-label="Image Prompt 生成结果">
+                  <header><span class="lens-mark"><i></i></span><span><strong>Image Prompt</strong><small>REVERSE THE VISUAL · v0.3.0</small></span><button type="button" aria-label="关闭演示卡片">×</button></header>
+                  <div class="card-preview"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="当前分析的建筑参考图"></div>
+                  <div class="card-result"><p class="result-state"><i></i> 分析完成 · 建筑效果图</p><h2>可直接使用的提示词</h2><p>正立面视角的现代玻璃幕墙建筑，细密钢结构网格包裹通透体量，内部楼板与楼梯清晰可见。冷调自然光落在低饱和草地上，画面保持克制、安静的竞赛效果图气质……</p><button class="copy-hero-prompt" type="button">复制提示词</button></div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="case-hero-bottom">
+            <div class="case-hero-copy"><h1>Image<br>Prompt</h1><p class="case-title-en">Image Prompt · Reverse the Visual</p><p>不离开正在浏览的页面，把一张参考图转译成结构完整、可以继续修改的中文生图提示词。</p><div class="case-chips"><span>产品策略</span><span>Chrome 扩展</span><span>多模态 AI</span><span>体验设计</span></div></div>
+            <div class="case-hero-actions"><a class="case-button case-button-light" href="#demo">体验演示 ↗</a><a class="case-button" href="#story">阅读案例 ↓</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="demo-section" id="demo">
+        <div class="demo-heading"><p>INTERACTIVE DEMO</p><h2>选一张图，试试原位生成</h2><span>演示使用预设结果，不会上传图片或调用真实 API。</span></div>
+        <div class="demo-shell">
+          <div class="demo-gallery" role="tablist" aria-label="选择演示图片">
+            <button class="demo-thumb is-active" type="button" role="tab" aria-selected="true" data-sample="architecture"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="玻璃建筑"><span>建筑效果图</span></button>
+            <button class="demo-thumb" type="button" role="tab" aria-selected="false" data-sample="city"><img src="../../assets/projects/prompt/prompt-40.jpg" alt="城市鸟瞰插画"><span>城市插画</span></button>
+            <button class="demo-thumb" type="button" role="tab" aria-selected="false" data-sample="analysis"><img src="../../assets/projects/prompt/prompt-66.jpg" alt="活动分析图"><span>行为分析图</span></button>
+          </div>
+          <div class="demo-workspace">
+            <div class="demo-browser">
+              <div class="demo-browser-bar"><span>● ● ●</span><b>visual-library.com</b></div>
+              <div class="demo-image"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="当前选择的参考图"></div>
+            </div>
+            <section class="demo-card" aria-live="polite">
+              <header><span class="lens-mark"><i></i></span><span><strong>Image Prompt</strong><small>REVERSE THE VISUAL</small></span></header>
+              <div class="demo-card-body"><p class="demo-status">准备分析 · 建筑效果图</p><h3>参考图已定位</h3><p class="demo-output">插件会从主体、构图、视角、材质、光线、色调和风格七个维度组织提示词。</p></div>
+              <div class="demo-actions"><button class="demo-generate" type="button">反推提示词</button><button class="demo-copy" type="button" disabled>复制</button></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-layout" id="story">
+        <aside class="case-facts"><p>PROJECT INFO</p><dl><div><dt>项目角色</dt><dd>产品策划<br>体验设计<br>前端实现</dd></div><div><dt>项目类型</dt><dd>AI 工具<br>Chrome 扩展</dd></div><div><dt>当前交付</dt><dd>可安装原型<br>交互演示</dd></div><div><dt>技术工具</dt><dd>WXT · TypeScript<br>Doubao API</dd></div></dl></aside>
+        <article class="case-story">
+          <section class="story-block"><p class="story-index">01 / CONTEXT</p><h2>灵感出现的地方，往往不是 AI 对话框</h2><p class="story-lead">设计师在 Pinterest、素材站或项目网页里看到参考图时，通常要先保存图片，再切换到 AI 工具、上传并重新解释需求。真正耗时的不是模型识图，而是上下文在多个工具之间不断断裂。</p></section>
+
+          <section class="story-block problem-block">
+            <p class="story-index">02 / THE PROBLEM</p><h2>三个断点，让一次简单的反推变得笨重</h2>
+            <div class="problem-grid"><div><span>01</span><h3>离开现场</h3><p>参考图通常来自浏览过程，但生成提示词必须跳到另一个工具。</p></div><div><span>02</span><h3>重复说明</h3><p>每次都要重新上传图片、说明用途，并补充输出格式要求。</p></div><div><span>03</span><h3>结果不稳定</h3><p>通用图片描述不一定能直接作为生图提示词，也容易遗漏构图与材质。</p></div></div>
+          </section>
+
+          <section class="story-block productization-block">
+            <p class="story-index">03 / FROM SKILL TO PRODUCT</p><h2>不是重新做一个模型，而是把方法变成稳定体验</h2>
+            <p class="story-lead">项目起点是一套图片提示词反推 Skill。产品化的关键，是把原本依赖对话的能力拆成固定入口、结构化输出、可继续修改和本地历史，让用户不需要理解背后的提示词工程。</p>
+            <div class="productization-flow" aria-label="从 Skill 到浏览器产品的转化过程"><div><small>01</small><strong>方法规则</strong><span>主体、构图、材质、光影、色彩与风格</span></div><i>→</i><div><small>02</small><strong>结构化输出</strong><span>主提示词、使用建议与可编辑标签</span></div><i>→</i><div><small>03</small><strong>浏览器动作</strong><span>右键、原位生成、修改、复制与历史</span></div></div>
+          </section>
+
+          <figure class="story-figure sample-figure"><div class="sample-strip"><span><img src="../../assets/projects/prompt/prompt-03.jpg" alt="扁平化建筑效果图提示词案例" loading="lazy"></span><span><img src="../../assets/projects/prompt/prompt-40.jpg" alt="城市鸟瞰插画提示词案例" loading="lazy"></span><span><img src="../../assets/projects/prompt/prompt-66.jpg" alt="活动分析图提示词案例" loading="lazy"></span></div><figcaption><b>既有内容资产</b> 62 例建筑效果图、展板和分析图提示词，为模型输出评测与演示案例提供基础。</figcaption></figure>
+
+          <section class="story-block">
+            <p class="story-index">04 / EXPERIENCE STRATEGY</p><h2>把功能放回图片旁边</h2>
+            <p class="story-lead">最终交互没有采用上传首页，也没有要求用户打开独立工作台。用户对某张图片发起操作后，结果卡片直接出现在目标图片附近，浏览、判断和修改始终发生在同一个上下文中。</p>
+            <div class="interaction-flow" aria-label="插件核心交互流程"><div><b>01</b><strong>发现图片</strong><span>停留在原网页</span></div><em>→</em><div><b>02</b><strong>右键触发</strong><span>只分析主动选择的图</span></div><em>→</em><div><b>03</b><strong>原位生成</strong><span>卡片贴近目标图片</span></div><em>→</em><div><b>04</b><strong>修改复制</strong><span>结果继续进入创作</span></div></div>
+          </section>
+
+          <section class="story-block decision-block">
+            <p class="story-index">05 / PRODUCT DECISIONS</p><h2>三个取舍，定义一个轻量工具</h2>
+            <div class="decision-grid"><article><span>01</span><h3>浏览器插件，而不是上传网页</h3><p>参考图的发现本来就发生在浏览器里，入口越接近图片，用户需要搬运的信息越少。</p></article><article><span>02</span><h3>页面内浮层，而不是跳转新页面</h3><p>让结果贴近原图，用户可以一边观察视觉细节，一边判断提示词是否准确。</p></article><article><span>03</span><h3>允许继续修改，而不是一次性答案</h3><p>“更写实”“改成夜景”等调整不需要重新开始，AI 输出成为可协作的初稿。</p></article></div>
+          </section>
+
+          <section class="story-block anatomy-block">
+            <p class="story-index">06 / OUTPUT DESIGN</p><h2>把“看起来像”拆成可以继续编辑的视觉语言</h2>
+            <p class="story-lead">模型返回的不只是长文本，而是一份可校验的数据结构。界面把核心提示词与标签分别呈现，让用户既能直接复制，也能快速判断模型是否抓住了画面的关键特征。</p>
+            <div class="prompt-anatomy"><div class="anatomy-tags"><span>主体</span><span>构图与视角</span><span>空间层次</span><span>材质</span><span>光线</span><span>色彩</span><span>风格</span></div><div class="anatomy-result"><small>STRUCTURED RESULT</small><h3>约 260–360 字中文提示词</h3><p>画面事实被组织为连贯、具体、可以直接粘贴到生图工具的自然语言，同时返回简短使用建议与五类可编辑标签。</p><div><b>subject[]</b><b>composition[]</b><b>lighting[]</b><b>palette[]</b><b>style[]</b></div></div></div>
+          </section>
+
+          <section class="story-block trust-block">
+            <p class="story-index">07 / PRIVACY &amp; DELIVERY</p><h2>原型可以快速验证，公开发布需要重新划清边界</h2>
+            <p class="story-lead">当前可安装原型将 API Key 保存在用户本机的 Chrome 扩展存储中，用于验证完整流程；这不等同于安全的公开发布方案。正式版本需要把模型调用迁移到自有后端，并补充鉴权、限流、预算控制与日志脱敏。</p>
+            <div class="trust-compare"><div><small>CURRENT PROTOTYPE</small><strong>本机配置 API Key</strong><p>适合个人安装与产品验证；图片在内存中转为 Data URL，不写入下载目录。</p></div><i>→</i><div><small>PUBLIC RELEASE</small><strong>扩展 → 自有后端 → 模型</strong><p>服务端保存密钥，并对调用次数、错误日志和使用额度建立明确控制。</p></div></div>
+          </section>
+
+          <section class="story-block implemented-block">
+            <p class="story-index">08 / CURRENT BUILD</p><h2>从概念规则走到可安装、可操作的完整原型</h2>
+            <div class="outcome-grid"><div><strong>1</strong><span>次右键进入主流程</span></div><div><strong>5</strong><span>类结构化视觉标签</span></div><div><strong>20</strong><span>条本地历史上限</span></div><div><strong>0</strong><span>张图片写入下载目录</span></div></div>
+            <ul class="implemented-list"><li><span>✓</span>网页图片右键菜单与目标图片定位</li><li><span>✓</span>页面内加载、成功、失败与历史状态</li><li><span>✓</span>继续输入修改要求并重新生成</li><li><span>✓</span>复制、恢复、删除与清空本地历史</li></ul>
+          </section>
+
+          <section class="story-block reflection-block">
+            <p class="story-index">09 / REFLECTION</p><h2>好用的 AI 产品，会让模型本身退到后面</h2><p class="story-lead">这个项目让我重新理解了“AI 能力产品化”：价值并不只来自模型回答得多聪明，而在于入口是否出现在正确场景、结果是否可判断，以及用户能否继续控制它。</p><p>下一阶段将以既有案例整理 Golden Set，验证视觉事实准确性、格式合规率与响应延迟，再决定公开 Demo 的额度与发布方式。</p>
+          </section>
+        </article>
+      </section>
+
+      <nav class="project-pager" aria-label="项目翻页"><a href="../resume-notes/"><span>上一个项目</span><strong>稿定简历 ←</strong></a><a href="../../../index.html#projects"><span>返回</span><strong>全部项目 →</strong></a></nav>
+    </main>
+
+    <footer><span>YANG JIN · PORTFOLIO</span><span>© 2026</span></footer>
+
+    <script>if (window.location.protocol !== 'file:') { document.querySelectorAll('a[href^="../../../index.html"]').forEach(link => { link.href = link.hash ? `/${link.hash}` : '/' }) }</script>
+    <script src="./demo.js"></script>
+  </body>
+</html>

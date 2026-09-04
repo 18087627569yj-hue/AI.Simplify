@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="description" content="稿定简历：一款可解释、重事实的 AI 简历优化产品设计案例。">
+    <meta property="og:image" content="./og-gaoding.png">
+    <link rel="stylesheet" href="./style.css?v=20260830-1">
+    <title>稿定简历｜杨金作品集</title>
+  </head>
+  <body>
+    <div class="case-progress" aria-hidden="true"><span></span></div>
+    <header class="case-nav">
+      <a class="case-nav-brand" href="../../../index.html"><b>Y</b> 杨金 · YANG JIN</a>
+      <div class="case-nav-meta"><span>重庆 · 中国</span><span>产品 / 内容 / AI</span></div>
+      <a class="case-nav-back" href="../../../index.html#projects">返回作品集 ↗</a>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="case-hero-watermark" aria-hidden="true">RESUME</div>
+        <div class="case-hero-inner">
+          <p class="case-eyebrow">EXPLAINABLE AI PRODUCT · 2026</p>
+          <div class="case-hero-stickers" aria-hidden="true"><span>CASE STUDY · 02</span><span>06 SCREENS</span></div>
+          <div class="device-stage" aria-label="稿定简历在手机、平板和电脑上的响应式产品界面展示">
+            <div class="device device-phone">
+              <div class="device-phone-speaker" aria-hidden="true"></div>
+              <div class="device-screen"><img src="../../assets/projects/resume-notes/screens/hero-phone.png" alt="稿定简历手机端首页"></div>
+            </div>
+            <div class="device device-tablet">
+              <div class="device-camera" aria-hidden="true"></div>
+              <div class="device-screen"><img src="../../assets/projects/resume-notes/screens/hero-tablet.png" alt="稿定简历平板端首页"></div>
+            </div>
+            <div class="device device-laptop">
+              <div class="device-camera" aria-hidden="true"></div>
+              <div class="device-screen"><img src="../../assets/projects/resume-notes/screens/hero-desktop.png" alt="稿定简历电脑端首页"></div>
+              <div class="laptop-base" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="case-hero-bottom">
+            <div class="case-hero-copy">
+              <h1>稿定简历</h1>
+              <p class="case-title-en">Gaoding Resume · Explainable AI Resume Assistant</p>
+              <p>不只润色句子，而是先读懂岗位、找到真实证据，再和用户一起改好。让每条建议都有依据，也让最终简历经得住面试追问。</p>
+              <div class="case-chips" aria-label="项目关键词"><span>产品策略</span><span>AI 应用</span><span>体验设计</span><span>真实性护栏</span></div>
+            </div>
+            <div class="case-hero-actions">
+              <a class="case-button case-button-light" href="./demo/" target="_blank" rel="noopener noreferrer">体验示例 ↗</a>
+              <a class="case-button" href="#story">阅读案例 ↓</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <figure class="case-cover">
+        <img src="./og-gaoding.png" alt="稿定简历 AI 简历优化产品封面">
+        <figcaption><span>02</span> 从岗位理解到事实确认，把一次黑箱式润色改造成可解释、可控制的协作过程。</figcaption>
+      </figure>
+
+      <section class="case-layout" id="story">
+        <aside class="case-facts" aria-label="项目信息">
+          <p class="facts-label">PROJECT INFO</p>
+          <dl>
+            <div><dt>项目角色</dt><dd>产品策划<br>体验设计<br>前端实现</dd></div>
+            <div><dt>项目类型</dt><dd>AI 求职工具<br>Web 产品</dd></div>
+            <div><dt>交付范围</dt><dd>完整产品流程<br>AI 分析接口<br>本地导出</dd></div>
+            <div><dt>技术工具</dt><dd>React · TypeScript<br>OpenAI API</dd></div>
+          </dl>
+        </aside>
+
+        <article class="case-story">
+          <section class="story-block story-intro">
+            <p class="story-index">01 / CONTEXT</p>
+            <h2>简历优化，不该只是把句子写得更漂亮</h2>
+            <p class="story-lead">多数简历工具直接给出一份“更像标准答案”的文本，却没有告诉用户岗位真正看重什么、修改依据来自哪里，也很容易让未经确认的信息混进最终版本。</p>
+            <p>因此，我把产品定位为一位认真、坦诚的 AI 资深 HR：它先理解岗位，再回到候选人的真实经历中找证据，最后通过可对照、可恢复、可确认的方式完成改写。</p>
+          </section>
+
+          <section class="story-block problem-block">
+            <p class="story-index">02 / THE PROBLEM</p>
+            <h2>三个风险，让“一键优化”失去可信度</h2>
+            <div class="problem-grid">
+              <div><span>01</span><h3>岗位没读懂</h3><p>只替换关键词，没有拆解硬性门槛、加分项与核心能力。</p></div>
+              <div><span>02</span><h3>修改像黑箱</h3><p>用户看不到原文与新文的关系，也不知道每处调整为何发生。</p></div>
+              <div><span>03</span><h3>事实被放大</h3><p>漂亮的数字与结论可能没有证据，最终让候选人承担面试风险。</p></div>
+            </div>
+          </section>
+
+          <figure class="story-figure figure-wide">
+            <button data-index="1" aria-label="放大查看材料添加界面"><img src="../../assets/projects/resume-notes/screens/02-input.png" alt="简历与目标岗位材料添加界面" loading="lazy"></button>
+            <figcaption><span>材料入口</span> 同时接收简历与目标岗位，支持文字、招聘链接和 JD 截图三种输入方式。</figcaption>
+          </figure>
+
+          <section class="story-block">
+            <p class="story-index">03 / EXPERIENCE STRATEGY</p>
+            <h2>把一次改写，拆成四次有来有回的确认</h2>
+            <p class="story-lead">产品没有把“上传—下载”压成一个按钮，而是保留理解、诊断、改写与确认四个清晰阶段。用户始终知道 AI 正在做什么，也能在关键节点介入。</p>
+            <ul class="decision-list">
+              <li><strong>原始材料始终可见</strong><span>左侧保留原简历结构，避免用户在优化过程中失去判断基准。</span></li>
+              <li><strong>修改理由逐条对应</strong><span>每条改写同时标注对应 JD、修改依据与事实状态。</span></li>
+              <li><strong>最终决定交给用户</strong><span>支持编辑、恢复原文和真实性确认，未确认推断不会进入导出版本。</span></li>
+            </ul>
+          </section>
+
+          <figure class="story-figure figure-wide">
+            <button data-index="2" aria-label="放大查看八维诊断界面"><img src="../../assets/projects/resume-notes/screens/03-diagnosis.png" alt="简历总体匹配度与八维诊断界面" loading="lazy"></button>
+            <figcaption><span>解释性诊断</span> 从岗位相关性、成果表达、HR 阅读体验与 ATS 兼容性等八个维度建立行动顺序。</figcaption>
+          </figure>
+
+          <section class="story-block">
+            <p class="story-index">04 / SYSTEM DESIGN</p>
+            <h2>诊断不是终点，而是一条可追溯的修改链</h2>
+            <p class="story-lead">系统先从 JD 提取关键要求，再将每条要求映射到候选人的已有经历。右侧优化版只在原文事实范围内重组表达，并通过修订痕迹解释新增、替换与保留内容。</p>
+            <div class="system-flow" aria-label="简历优化流程">
+              <div><b>简历与 JD</b><span>读取真实材料</span></div><i>→</i>
+              <div><b>八维诊断</b><span>确定修改优先级</span></div><i>→</i>
+              <div><b>逐条改写</b><span>展示依据与差异</span></div><i>→</i>
+              <div><b>确认导出</b><span>用户最终负责</span></div>
+            </div>
+          </section>
+
+          <figure class="story-figure figure-wide">
+            <button data-index="3" aria-label="放大查看原文与优化版对比界面"><img src="../../assets/projects/resume-notes/screens/04-compare.png" alt="原版简历与针对性优化版对比界面" loading="lazy"></button>
+            <figcaption><span>双栏对比</span> 原稿与优化版保持同一结构，修订痕迹直接呈现在正文中。</figcaption>
+          </figure>
+
+          <section class="story-block">
+            <p class="story-index">05 / TRUTH &amp; DELIVERY</p>
+            <h2>把真实性写进流程，而不是藏进免责声明</h2>
+            <p class="story-lead">最终版本只有在用户完成事实确认后才能导出。系统明确区分原简历事实、已有事实改写与待确认推断，并提供 DOCX、PDF 与修改报告三种交付方式。</p>
+            <div class="outcome-grid">
+              <div><strong>4</strong><span>清晰产品阶段</span></div>
+              <div><strong>8</strong><span>诊断评价维度</span></div>
+              <div><strong>3</strong><span>最终导出格式</span></div>
+              <div><strong>0</strong><span>未经确认的编造</span></div>
+            </div>
+          </section>
+
+          <div class="figure-pair">
+            <figure class="story-figure">
+              <button data-index="4" aria-label="放大查看改写依据"><img src="../../assets/projects/resume-notes/screens/05-compare-detail.png" alt="简历逐条改写与依据详情" loading="lazy"></button>
+              <figcaption><span>改写依据</span> 每段内容可编辑、可恢复，并显示事实状态与岗位关联。</figcaption>
+            </figure>
+            <figure class="story-figure">
+              <button data-index="5" aria-label="放大查看真实性确认与导出"><img src="../../assets/projects/resume-notes/screens/06-export.png" alt="最终简历预览、真实性确认与导出选项" loading="lazy"></button>
+              <figcaption><span>确认导出</span> 先核对事实，再将最终版本交付为可继续使用的文件。</figcaption>
+            </figure>
+          </div>
+
+          <section class="story-block story-conclusion">
+            <p class="story-index">06 / REFLECTION</p>
+            <h2>AI 的价值，是帮助人更诚实地说清自己</h2>
+            <p class="story-lead">这个项目把 AI 从“替用户写答案”转向“帮助用户理解问题、组织证据并做决定”。效率仍然重要，但透明、可控与可信才是求职场景里更长久的产品价值。</p>
+            <p>下一阶段将继续优化文件解析、指标口径追问与多轮确认体验，并通过真实求职者测试校准诊断维度和建议表达。</p>
+          </section>
+        </article>
+      </section>
+
+      <section class="gallery-section" id="gallery">
+        <div class="gallery-heading">
+          <div><p>FULL INTERFACE ARCHIVE</p><h2>完整界面档案</h2></div>
+        </div>
+        <div class="archive-carousel" role="region" aria-roledescription="carousel" aria-label="稿定简历完整界面档案" tabindex="0">
+          <div class="screen-gallery">
+            <figure><button data-index="0"><img src="../../assets/projects/resume-notes/screens/01-home.png" alt="稿定简历界面 01" loading="eager"></button><figcaption>01 · 产品首页</figcaption></figure>
+            <figure><button data-index="1"><img src="../../assets/projects/resume-notes/screens/02-input.png" alt="稿定简历界面 02" loading="lazy"></button><figcaption>02 · 添加材料</figcaption></figure>
+            <figure><button data-index="2"><img src="../../assets/projects/resume-notes/screens/03-diagnosis.png" alt="稿定简历界面 03" loading="lazy"></button><figcaption>03 · 八维诊断</figcaption></figure>
+            <figure><button data-index="3"><img src="../../assets/projects/resume-notes/screens/04-compare.png" alt="稿定简历界面 04" loading="lazy"></button><figcaption>04 · 双栏对比</figcaption></figure>
+            <figure><button data-index="4"><img src="../../assets/projects/resume-notes/screens/05-compare-detail.png" alt="稿定简历界面 05" loading="lazy"></button><figcaption>05 · 改写详情</figcaption></figure>
+            <figure><button data-index="5"><img src="../../assets/projects/resume-notes/screens/06-export.png" alt="稿定简历界面 06" loading="lazy"></button><figcaption>06 · 确认导出</figcaption></figure>
+          </div>
+          <div class="archive-controls">
+            <div class="archive-buttons">
+              <button class="archive-prev" type="button" aria-label="上一个界面">←</button>
+              <button class="archive-toggle" type="button" aria-label="暂停自动轮播" aria-pressed="false">暂停</button>
+              <button class="archive-next" type="button" aria-label="下一个界面">→</button>
+            </div>
+            <div class="archive-status" aria-live="polite"><strong>01</strong><span>/ 06</span><em>产品首页</em></div>
+            <div class="archive-timer" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <nav class="project-pager" aria-label="项目翻页">
+        <a href="../../../index.html#projects"><span>返回</span><strong>全部项目</strong></a>
+        <a href="../../../index.html#projects"><span>下一个</span><strong>更多作品 →</strong></a>
+      </nav>
+    </main>
+
+    <footer><span>YANG JIN · PORTFOLIO</span><span>© 2026</span></footer>
+
+    <dialog class="lightbox"><button class="lightbox-close" aria-label="关闭">×</button><button class="lightbox-prev" aria-label="上一张">←</button><img alt="放大的项目界面"><button class="lightbox-next" aria-label="下一张">→</button><span class="lightbox-count"></span></dialog>
+    <script>
+      if (window.location.protocol !== 'file:') {
+        document.querySelectorAll('a[href="../../../index.html"]').forEach(link => { link.href = '/' })
+        document.querySelectorAll('a[href="../../../index.html#projects"]').forEach(link => { link.href = '/#projects' })
+      }
+    </script>
+    <script src="./gallery.js?v=20260902-1"></script>
+  </body>
+</html>

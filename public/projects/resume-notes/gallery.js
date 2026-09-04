@@ -1,4 +1,11 @@
-const screens = Array.from({ length: 24 }, (_, index) => `../../assets/projects/zoumaling/screens/${String(index + 1).padStart(2, '0')}.jpg`)
+const screens = [
+  '../../assets/projects/resume-notes/screens/01-home.png',
+  '../../assets/projects/resume-notes/screens/02-input.png',
+  '../../assets/projects/resume-notes/screens/03-diagnosis.png',
+  '../../assets/projects/resume-notes/screens/04-compare.png',
+  '../../assets/projects/resume-notes/screens/05-compare-detail.png',
+  '../../assets/projects/resume-notes/screens/06-export.png',
+]
 const dialog = document.querySelector('.lightbox')
 const dialogImage = dialog?.querySelector('img')
 const count = dialog?.querySelector('.lightbox-count')
@@ -8,7 +15,7 @@ const showScreen = index => {
   current = (index + screens.length) % screens.length
   if (dialogImage) {
     dialogImage.src = screens[current]
-    dialogImage.alt = `走马岭系统界面 ${String(current + 1).padStart(2, '0')}`
+    dialogImage.alt = `稿定简历产品界面 ${String(current + 1).padStart(2, '0')}`
   }
   if (count) count.textContent = `${String(current + 1).padStart(2, '0')} / ${screens.length}`
 }
@@ -31,16 +38,6 @@ document.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft') showScreen(current - 1)
   if (event.key === 'ArrowRight') showScreen(current + 1)
 })
-const siteLink = document.querySelector('.site-link')
-if (siteLink) {
-  const projectUrl = new URL(window.location.href)
-  projectUrl.port = '5174'
-  projectUrl.pathname = '/'
-  projectUrl.search = ''
-  projectUrl.hash = ''
-  siteLink.href = projectUrl.href
-}
-
 const archiveCarousel = document.querySelector('.archive-carousel')
 const archiveTrack = archiveCarousel?.querySelector('.screen-gallery')
 const archiveSlides = Array.from(archiveTrack?.querySelectorAll('figure') || [])
