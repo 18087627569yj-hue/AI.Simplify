@@ -61,3 +61,90 @@ img { display: block; max-width: 100%; }
 .project-pager { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--ink); }.project-pager a { min-height: 190px; padding: 40px 5vw; display: flex; flex-direction: column; justify-content: space-between; border-right: 2px solid var(--ink); transition: background .2s; }.project-pager a:last-child { border: 0; text-align: right; }.project-pager a:hover { background: #e7e6df; }.project-pager span { color: var(--muted); font-size: 13px; }.project-pager strong { font-size: clamp(28px,4vw,54px); }.project-pager + * { clear: both; } footer { min-height: 88px; padding: 0 4vw; display: flex; align-items: center; justify-content: space-between; background: var(--deep-blue); color: rgba(255,255,255,.58); font-size: 12px; letter-spacing: .1em; }
 @media (max-width: 920px) { .case-nav { grid-template-columns:1fr 1fr; }.case-nav-meta { display:none; }.browser-frame { width:100%; }.inline-card { width:42%; }.case-hero-bottom { grid-template-columns:1fr; }.case-hero-actions { justify-self:start; }.demo-heading { grid-template-columns:1fr; }.demo-workspace { grid-template-columns:1fr; }.demo-browser { min-height:430px; }.demo-image { height:382px; }.demo-card { margin:-100px 25px 28px auto; width:min(360px,80%); position:relative; }.case-layout { grid-template-columns:1fr; }.case-facts { position:static; }.case-facts dl { display:grid; grid-template-columns:repeat(4,1fr); gap:0 22px; }.problem-grid { grid-template-columns:1fr; }.problem-grid > div { min-height:0; border-right:0; border-bottom:2px solid var(--ink); }.productization-flow { grid-template-columns:1fr; }.productization-flow > i { transform:rotate(90deg); justify-self:center; }.interaction-flow { grid-template-columns:1fr 1fr; }.interaction-flow > em { display:none; }.outcome-grid { grid-template-columns:1fr 1fr; }.outcome-grid > div:nth-child(2) { border-right:0; }.outcome-grid > div:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.4); } }
 @media (max-width: 640px) { .case-nav { min-height:58px; padding:0 18px; }.case-nav-brand { font-size:11px; }.case-nav-back { font-size:11px; }.case-hero-inner { width:calc(100% - 32px); padding-top:32px; }.hero-stage { margin:28px 0 36px; }.browser-frame { box-shadow:8px 9px 0 rgba(16,17,20,.28); }.browser-bar { height:35px; }.browser-address { padding:5px; font-size:8px; }.browser-page { height:430px; min-height:0; }.browser-page > img { width:100%; height:47%; }.context-menu { left:5%; top:18%; width:145px; padding:9px; }.context-menu strong { font-size:11px; }.inline-card { top:auto; left:5%; right:5%; bottom:4%; width:auto; max-height:64%; }.card-preview { display:none; }.card-result > p:not(.result-state) { font-size:13px; }.case-hero-copy h1 { font-size:64px; }.case-hero-actions { width:100%; display:grid; grid-template-columns:1fr 1fr; }.case-button { min-width:0; padding:12px 8px; font-size:13px; }.demo-section { padding:78px 16px 88px; }.demo-heading h2 { font-size:42px; }.demo-gallery { overflow:auto; padding-bottom:8px; }.demo-thumb { min-width:142px; }.demo-browser { min-height:340px; }.demo-image { height:292px; }.demo-card { width:calc(100% - 28px); margin:-80px 14px 16px; }.demo-card-body { min-height:290px; padding:20px; }.demo-actions { padding:0 20px 20px; }.case-layout { width:calc(100% - 32px); padding:82px 0; gap:58px; }.case-facts dl { grid-template-columns:1fr 1fr; }.story-block { margin-bottom:82px; }.story-block h2 { font-size:40px; }.story-lead { font-size:18px; }.problem-grid h3 { margin-top:25px; }.sample-strip { grid-template-columns:1fr; }.sample-strip span { aspect-ratio:1.5; }.interaction-flow { grid-template-columns:1fr; }.decision-grid article { padding:80px 20px 22px; }.prompt-anatomy { grid-template-columns:1fr; }.anatomy-tags { display:grid; grid-template-columns:1fr 1fr; }.trust-compare { grid-template-columns:1fr; }.trust-compare > i { transform:rotate(90deg); justify-self:center; }.implemented-list { grid-template-columns:1fr; }.reflection-block { padding:30px 22px; }.project-pager { grid-template-columns:1fr; }.project-pager a { min-height:140px; border-right:0; border-bottom:2px solid var(--ink); }.project-pager a:last-child { border-bottom:0; } footer { padding:0 18px; font-size:10px; } }
+
+/* Pinterest-native product context */
+.pinterest-frame { position: relative; overflow: hidden; background: #fff; }
+.pinterest-top {
+  height: 54px;
+  padding: 0 18px 0 72px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid #dededb;
+  background: #fff;
+}
+.pinterest-top b { padding: 11px 18px; flex: 1; border-radius: 18px; background: #e9e9e6; color: #696969; font-size: 13px; }
+.pinterest-top span { font-size: 13px; font-weight: 800; white-space: nowrap; }
+.pinterest-top i { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #7952b9; color: #fff; font-style: normal; font-weight: 800; }
+.pinterest-page { height: min(600px,55vw); min-height: 430px; background: #fff; }
+.pinterest-rail,.demo-pinterest-rail { position: absolute; z-index: 7; inset: 0 auto 0 0; width: 58px; padding: 18px 0; display: flex; flex-direction: column; align-items: center; gap: 28px; border-right: 1px solid #dededb; background: #fff; color: var(--ink); }
+.pinterest-rail b,.demo-pinterest-rail b { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; background: #e60023; color: #fff; font-size: 16px; }
+.pinterest-rail span,.demo-pinterest-rail span { font-size: 19px; font-weight: 800; }
+.pinterest-rail em,.demo-pinterest-rail em { margin-top: auto; font-style: normal; }
+.pinterest-grid,.demo-pinterest-grid { position: absolute; inset: 0 0 0 58px; padding: 16px; display: grid; grid-template-columns: repeat(4,1fr); grid-auto-rows: 46%; gap: 14px; overflow: hidden; background: #fff; }
+.pinterest-grid span,.demo-pinterest-grid span { overflow: hidden; border-radius: 16px; background: #ececea; }
+.pinterest-grid span:nth-child(2),.pinterest-grid span:nth-child(5),.demo-pinterest-grid span:nth-child(2),.demo-pinterest-grid span:nth-child(5) { transform: translateY(38px); }
+.pinterest-grid img,.demo-pinterest-grid img { width: 155%; height: 100%; object-fit: cover; object-position: left center; filter: saturate(.76) contrast(.94); }
+.pin-detail,.demo-pin-detail { position: absolute; z-index: 8; left: 7.5%; top: 5%; bottom: 5%; width: 49%; padding: 14px; border: 1px solid #d6d6d3; border-radius: 17px; background: #fff; box-shadow: 0 18px 54px rgba(16,17,20,.2); color: var(--ink); }
+.pin-actions,.demo-pin-actions { height: 42px; display: flex; align-items: center; justify-content: space-between; }
+.pin-actions b,.demo-pin-actions b { font-size: 16px; letter-spacing: .08em; white-space: nowrap; }
+.pin-actions span,.demo-pin-actions span { padding: 10px 15px; border-radius: 18px; background: #e60023; color: #fff; font-size: 13px; font-weight: 800; }
+.pin-image,.demo-image { height: calc(100% - 68px); overflow: hidden; border-radius: 14px; background: #ececea; }
+.pin-image img,.demo-image img { width: 185%; height: 100%; object-fit: cover; object-position: left center; }
+.pin-detail > small,.demo-pin-detail > small { display: block; padding: 8px 3px 0; color: #606168; font-size: 12px; font-weight: 700; }
+.pinterest-frame .inline-card { right: 5%; top: 13%; width: 38%; max-height: 82%; }
+
+.demo-workspace { position: relative; display: block; height: 680px; overflow: hidden; border: 3px solid white; background: #fff; box-shadow: 14px 16px 0 var(--blue); }
+.demo-pinterest-top { position: absolute; z-index: 6; left: 64px; right: 0; top: 0; height: 58px; padding: 0 18px; display: flex; align-items: center; gap: 22px; border-bottom: 1px solid #dededb; background: #fff; color: var(--ink); }
+.demo-pinterest-top b { padding: 12px 18px; flex: 1; border-radius: 20px; background: #e9e9e6; color: #696969; font-size: 14px; }
+.demo-pinterest-top span { font-size: 14px; font-weight: 800; white-space: nowrap; }
+.demo-pinterest-top i { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #7952b9; color: #fff; font-style: normal; font-weight: 800; }
+.demo-pinterest-rail { top: 0; width: 64px; }
+.demo-pinterest-grid { inset: 58px 0 0 64px; grid-template-columns: repeat(4,1fr); grid-auto-rows: 47%; }
+.demo-pin-detail { left: 8%; top: 12%; bottom: 5%; width: 48%; }
+.demo-card { position: absolute; z-index: 10; right: 4%; top: 18%; width: 38%; max-height: 76%; margin: 0; overflow: auto; }
+.demo-card-body { min-height: 265px; }
+
+/* More compact, single-line hierarchy on wide screens */
+.story-block h2 { font-size: clamp(30px,3vw,39px); line-height: 1.12; white-space: nowrap; }
+.problem-grid h3 { font-size: 17px; white-space: nowrap; }
+.productization-flow strong { font-size: 17px; white-space: nowrap; }
+.interaction-flow strong { font-size: 15px; white-space: nowrap; }
+.decision-grid h3 { font-size: 19px; white-space: nowrap; }
+.anatomy-result h3 { font-size: 22px; white-space: nowrap; }
+
+@media (max-width: 920px) {
+  .pinterest-page { height: 550px; }
+  .pinterest-frame .inline-card { width: 42%; }
+  .demo-workspace { height: 640px; }
+  .demo-card { right: 3%; top: 19%; width: 42%; margin: 0; }
+  .demo-pin-detail { left: 9%; width: 48%; }
+  .story-block h2,.problem-grid h3,.productization-flow strong,.interaction-flow strong,.decision-grid h3,.anatomy-result h3 { white-space: normal; }
+}
+
+@media (max-width: 640px) {
+  .pinterest-top { height: 42px; padding-left: 48px; gap: 8px; }
+  .pinterest-top b { padding: 8px 10px; font-size: 9px; }
+  .pinterest-top span { display: none; }
+  .pinterest-top i { width: 24px; height: 24px; font-size: 10px; }
+  .pinterest-page { height: 510px; }
+  .pinterest-rail,.demo-pinterest-rail { width: 40px; gap: 22px; padding-top: 13px; }
+  .pinterest-rail b,.demo-pinterest-rail b { width: 22px; height: 22px; font-size: 12px; }
+  .pinterest-rail span,.demo-pinterest-rail span { font-size: 14px; }
+  .pinterest-grid { left: 40px; grid-template-columns: repeat(2,1fr); }
+  .pin-detail { left: 12%; top: 4%; bottom: 43%; width: 77%; padding: 8px; }
+  .pin-actions,.demo-pin-actions { height: 34px; }
+  .pin-actions b,.demo-pin-actions b { font-size: 11px; }
+  .pin-actions span,.demo-pin-actions span { padding: 7px 10px; font-size: 10px; }
+  .pinterest-frame .inline-card { left: 19%; right: 4%; top: 52%; bottom: 3%; width: auto; max-height: none; }
+  .demo-workspace { height: 680px; }
+  .demo-pinterest-top { left: 40px; height: 46px; padding: 0 10px; gap: 8px; }
+  .demo-pinterest-top b { padding: 9px 11px; font-size: 10px; }
+  .demo-pinterest-top span { display: none; }
+  .demo-pinterest-top i { width: 26px; height: 26px; font-size: 10px; }
+  .demo-pinterest-grid { inset: 46px 0 0 40px; grid-template-columns: repeat(2,1fr); }
+  .demo-pin-detail { left: 13%; top: 9%; bottom: 48%; width: 80%; padding: 8px; }
+  .demo-card { left: 18%; right: 3%; top: 50%; width: auto; max-height: 47%; margin: 0; }
+  .demo-card-body { min-height: 210px; }
+  .story-block h2 { font-size: 30px; }
+}

@@ -21,11 +21,12 @@
         <div class="case-hero-inner">
           <p class="case-eyebrow">AI BROWSER EXTENSION · 2026</p>
           <div class="hero-stage" aria-label="在网页图片旁直接生成提示词的浏览器插件界面">
-            <div class="browser-frame">
-              <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-address">inspiration.design / architecture</span><span class="browser-more">•••</span></div>
-              <div class="browser-page">
-                <img src="../../assets/projects/prompt/prompt-18.jpg" alt="现代玻璃建筑参考图">
-                <div class="context-menu" aria-hidden="true"><small>IMAGE ACTION</small><strong>反推提示词</strong><span>⌘ ↵</span></div>
+            <div class="browser-frame pinterest-frame">
+              <div class="pinterest-top"><b>⌕&nbsp;&nbsp;搜索灵感</b><span>最近浏览</span><i>J</i></div>
+              <div class="browser-page pinterest-page">
+                <nav class="pinterest-rail" aria-label="Pinterest 模拟导航"><b>P</b><span>⌂</span><span>▦</span><span>＋</span><span>♧</span><em>⚙</em></nav>
+                <div class="pinterest-grid" aria-hidden="true"><span><img src="../../assets/projects/prompt/prompt-03.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-40.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-18.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-66.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-24.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-53.jpg" alt=""></span></div>
+                <div class="pin-detail"><div class="pin-actions"><b>←　♡　↥　•••</b><span>保存</span></div><div class="pin-image"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="打开的现代玻璃建筑参考图"></div><small>Architecture reference · AI.Simplify</small></div>
                 <section class="inline-card" aria-label="Image Prompt 生成结果">
                   <header><span class="lens-mark"><i></i></span><span><strong>Image Prompt</strong><small>REVERSE THE VISUAL · v0.3.0</small></span><button type="button" aria-label="关闭演示卡片">×</button></header>
                   <div class="card-preview"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="当前分析的建筑参考图"></div>
@@ -50,10 +51,10 @@
             <button class="demo-thumb" type="button" role="tab" aria-selected="false" data-sample="analysis"><img src="../../assets/projects/prompt/prompt-66.jpg" alt="活动分析图"><span>行为分析图</span></button>
           </div>
           <div class="demo-workspace">
-            <div class="demo-browser">
-              <div class="demo-browser-bar"><span>● ● ●</span><b>visual-library.com</b></div>
-              <div class="demo-image"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="当前选择的参考图"></div>
-            </div>
+            <div class="demo-pinterest-top"><b>⌕&nbsp;&nbsp;搜索灵感</b><span>最近浏览</span><i>J</i></div>
+            <nav class="demo-pinterest-rail" aria-label="Pinterest 模拟导航"><b>P</b><span>⌂</span><span>▦</span><span>＋</span><span>♧</span><em>⚙</em></nav>
+            <div class="demo-pinterest-grid" aria-hidden="true"><span><img src="../../assets/projects/prompt/prompt-03.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-40.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-24.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-53.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-66.jpg" alt=""></span><span><img src="../../assets/projects/prompt/prompt-18.jpg" alt=""></span></div>
+            <div class="demo-pin-detail"><div class="demo-pin-actions"><b>←　♡　↥　•••</b><span>保存</span></div><div class="demo-image"><img src="../../assets/projects/prompt/prompt-18.jpg" alt="当前选择的参考图"></div><small>AI.Simplify · 视觉灵感收藏</small></div>
             <section class="demo-card" aria-live="polite">
               <header><span class="lens-mark"><i></i></span><span><strong>Image Prompt</strong><small>REVERSE THE VISUAL</small></span></header>
               <div class="demo-card-body"><p class="demo-status">准备分析 · 建筑效果图</p><h3>参考图已定位</h3><p class="demo-output">插件会从主体、构图、视角、材质、光线、色调和风格七个维度组织提示词。</p></div>
@@ -98,21 +99,6 @@
             <div class="prompt-anatomy"><div class="anatomy-tags"><span>主体</span><span>构图与视角</span><span>空间层次</span><span>材质</span><span>光线</span><span>色彩</span><span>风格</span></div><div class="anatomy-result"><small>STRUCTURED RESULT</small><h3>约 260–360 字中文提示词</h3><p>画面事实被组织为连贯、具体、可以直接粘贴到生图工具的自然语言，同时返回简短使用建议与五类可编辑标签。</p><div><b>subject[]</b><b>composition[]</b><b>lighting[]</b><b>palette[]</b><b>style[]</b></div></div></div>
           </section>
 
-          <section class="story-block trust-block">
-            <p class="story-index">07 / PRIVACY &amp; DELIVERY</p><h2>原型可以快速验证，公开发布需要重新划清边界</h2>
-            <p class="story-lead">当前可安装原型将 API Key 保存在用户本机的 Chrome 扩展存储中，用于验证完整流程；这不等同于安全的公开发布方案。正式版本需要把模型调用迁移到自有后端，并补充鉴权、限流、预算控制与日志脱敏。</p>
-            <div class="trust-compare"><div><small>CURRENT PROTOTYPE</small><strong>本机配置 API Key</strong><p>适合个人安装与产品验证；图片在内存中转为 Data URL，不写入下载目录。</p></div><i>→</i><div><small>PUBLIC RELEASE</small><strong>扩展 → 自有后端 → 模型</strong><p>服务端保存密钥，并对调用次数、错误日志和使用额度建立明确控制。</p></div></div>
-          </section>
-
-          <section class="story-block implemented-block">
-            <p class="story-index">08 / CURRENT BUILD</p><h2>从概念规则走到可安装、可操作的完整原型</h2>
-            <div class="outcome-grid"><div><strong>1</strong><span>次右键进入主流程</span></div><div><strong>5</strong><span>类结构化视觉标签</span></div><div><strong>20</strong><span>条本地历史上限</span></div><div><strong>0</strong><span>张图片写入下载目录</span></div></div>
-            <ul class="implemented-list"><li><span>✓</span>网页图片右键菜单与目标图片定位</li><li><span>✓</span>页面内加载、成功、失败与历史状态</li><li><span>✓</span>继续输入修改要求并重新生成</li><li><span>✓</span>复制、恢复、删除与清空本地历史</li></ul>
-          </section>
-
-          <section class="story-block reflection-block">
-            <p class="story-index">09 / REFLECTION</p><h2>好用的 AI 产品，会让模型本身退到后面</h2><p class="story-lead">这个项目让我重新理解了“AI 能力产品化”：价值并不只来自模型回答得多聪明，而在于入口是否出现在正确场景、结果是否可判断，以及用户能否继续控制它。</p><p>下一阶段将以既有案例整理 Golden Set，验证视觉事实准确性、格式合规率与响应延迟，再决定公开 Demo 的额度与发布方式。</p>
-          </section>
         </article>
       </section>
 
