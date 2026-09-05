@@ -973,6 +973,8 @@ body::before {
 .prompt-project-preview { color: #101114; background: #ecebe5 !important; }
 .prompt-project-preview::before,
 .prompt-project-preview::after { display: none; }
+.project-folder .prompt-project-preview > img { width: 100%; height: 100%; object-fit: contain; background: #fff; transform: none; }
+.project-folder:hover .prompt-project-preview > img { transform: scale(1.015); }
 .prompt-preview-browser {
   position: absolute;
   inset: 6% 4%;
